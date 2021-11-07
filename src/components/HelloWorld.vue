@@ -1,11 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
+import * as env from 'utils/env.ts'
 
 defineProps({
   msg: String
 })
 
 const count = ref(0)
+
+env.getEnvConfig();
 </script>
 
 <template>
