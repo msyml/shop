@@ -7,7 +7,9 @@ defineProps({
 })
 
 onMounted(() => {
-  getProductList({});
+  getProductList({}).then(res => {
+    console.log(res);
+  });
 })
 
 const count = ref(0)

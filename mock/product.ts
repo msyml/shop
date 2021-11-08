@@ -1,4 +1,5 @@
 import { Random } from 'mockjs'
+import { MockMethod } from 'vite-plugin-mock'
 import { resultSuccess } from './util';
 
 const productList = (pageSize) => {
@@ -15,8 +16,7 @@ const productList = (pageSize) => {
 
 export default [
     {
-        uri: 'api/product/list',
-        timeout: 1000,
+        url: '/api/product/list',
         method: 'get',
         response:({ query }) => {
             const {page = 1, pageSize = 10} = query;
@@ -29,4 +29,4 @@ export default [
             })
         }
     }
-]
+] as MockMethod[]
