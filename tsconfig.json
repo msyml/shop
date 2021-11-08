@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
+    // 设置JS语言版本
     "target": "esnext",
+    // 指定生成的模块
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
@@ -12,7 +14,7 @@
       "esnext",
       "dom"
     ],
-    // 修复import.meta.env的报错
+    // 指定不在源文件中，但是要包含进去的类型包名
     "types": [
       "vite/client"
     ],
@@ -25,6 +27,7 @@
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "types/*.ts"
   ]
 }

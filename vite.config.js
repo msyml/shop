@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import path from 'path'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import path from 'path';
 
 export default defineConfig({
   resolve: {
@@ -16,8 +16,8 @@ export default defineConfig({
       store: path.resolve(__dirname, 'src/store'),
       styles: path.resolve(__dirname, 'src/styles'),
       assets: path.resolve(__dirname, 'src/assets'),
-      plugins: path.resolve(__dirname, 'src/plugins')
-    }
+      plugins: path.resolve(__dirname, 'src/plugins'),
+    },
   },
-  plugins: [vue()]
-})
+  plugins: [vue()],
+});
