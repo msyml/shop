@@ -2,8 +2,8 @@
   "name": "shop",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "start": "vite",
+    "dev": "vite --mode development --host",
+    "start": "vite --mode development --host",
     "build": "vite build",
     "serve": "vite preview"
   },
