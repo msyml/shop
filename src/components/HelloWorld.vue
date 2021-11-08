@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { getProductList } from 'api'
+import { getProductList } from '../api'
 
 defineProps({
   msg: String
 })
 
 onMounted(() => {
-  getProductList();
+  getProductList({});
 })
 
 const count = ref(0)
