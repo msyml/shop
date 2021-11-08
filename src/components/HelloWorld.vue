@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import * as env from 'utils/env.ts'
+import { onMounted, ref } from 'vue'
+import { getProductList } from 'api'
 
 defineProps({
   msg: String
 })
 
+onMounted(() => {
+  getProductList();
+})
+
 const count = ref(0)
 
-env.getEnvConfig();
 </script>
 
 <template>
