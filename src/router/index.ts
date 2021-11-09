@@ -12,6 +12,7 @@ export const RootRoute: RouteRecordRaw = {
 };
 
 export const LoginRoute: RouteRecordRaw = {
+  // 可以自己指定路径以及引入组件测试
   path: '/login',
   name: 'Login',
   component: () => import('views/login/index.vue'),
