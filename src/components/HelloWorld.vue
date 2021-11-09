@@ -1,19 +1,25 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { getProductList } from '../api'
+import { onMounted, ref } from 'vue';
+import { getProductList } from '@/api';
+import { useStore } from 'vuex';
+
+const store = useStore();
 
 defineProps({
-  msg: String
-})
+  msg: String,
+});
+
+console.log(store.getters.getCount);
+store.dispatch('asyncIncrement');
+console.log(store.getters.getCount);
 
 onMounted(() => {
-  getProductList({}).then(res => {
+  getProductList({}).then((res) => {
     console.log(res);
   });
-})
+});
 
-const count = ref(0)
-
+const count = ref(0);
 </script>
 
 <template>

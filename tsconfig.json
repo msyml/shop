@@ -5,23 +5,24 @@
     // 指定生成的模块
     "module": "esnext",
     "moduleResolution": "node",
+    // 是否启用严格模式
     "strict": true,
-    "jsx": "preserve",
+    // 创建映射文件
     "sourceMap": true,
+    // 启用导入json
     "resolveJsonModule": true,
+    // 启用对CommonJs的支持
     "esModuleInterop": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     // 指定不在源文件中，但是要包含进去的类型包名
-    "types": [
-      "vite/client"
-    ],
-    "typeRoots": [
-      "./node_modules/@types/",
-      "./types"
-    ],
+    "types": ["vite/client"],
+    "typeRoots": ["./node_modules/@types/", "./types"],
+    // 解析非相对模块名的基准目录
+    "baseUrl": ".",
+    // 模块名到基于 baseUrl的路径映射的列表。
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": [
     "src/**/*.ts",
