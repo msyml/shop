@@ -2,6 +2,10 @@
 import { onMounted, ref } from 'vue';
 import { getProductList } from '@/api';
 import { useStore } from 'vuex';
+import axios from 'axios';
+import {getDefaultBaseUrl} from '@/utils/env'
+
+axios.get("/api/product/list",{baseURL: getDefaultBaseUrl()});
 
 const store = useStore();
 
@@ -14,9 +18,12 @@ store.dispatch('asyncIncrement');
 console.log(store.getters.getCount);
 
 onMounted(() => {
-  getProductList({}).then((res) => {
-    console.log(res);
-  });
+  // getProductList({}).then((res) => {
+  //   console.log(res);
+  // });
+axios.get("/api/product/list",{baseURL: getDefaultBaseUrl()}).then(res => {
+  console.log(res);
+})
 });
 
 const count = ref(0);

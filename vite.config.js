@@ -26,4 +26,14 @@ export default defineConfig({
       supportTs: true,
     })
   ],
+  css: {
+    preprocessorOptions: {
+      less: {
+        modifyVars: {},
+        javascriptEnabled: true,
+        // .vue不用手动引入
+        additionalData: `@import "src/styles/variable.less";`,
+      },
+    },
+  },
 });

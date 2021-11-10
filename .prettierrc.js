@@ -1,20 +1,30 @@
 module.exports = {
+  // 单行限制长度，默认80
   printWidth: 100,
+  // 缩进空格数，默认值2
   tabWidth: 2,
+  // 用制表符可不是空格缩进，默认false
   useTabs: false,
+  // 分号
   semi: true,
+  // 缩进Vue文件中的脚本和样式
   vueIndentScriptAndStyle: true,
+  // 使用单引号
   singleQuote: true,
+  // 应用对象中的属性改变时，只在需要的地方添加引号
   quoteProps: 'as-needed',
+  // 括号之间的空格
   bracketSpacing: true,
+  // 多行时，末尾逗号，遵循ES5，给对象、数组等添加
   trailingComma: 'es5',
-  jsxBracketSameLine: false,
-  jsxSingleQuote: false,
+  // 箭头函数有且只有一个参数时，使用括号包裹
   arrowParens: 'always',
-  insertPragma: false,
-  requirePragma: false,
+  // 如何管理散落的代码
   proseWrap: 'never',
+  // 严格限制html代码中的空格
   htmlWhitespaceSensitivity: 'strict',
+  // 行尾字符
   endOfLine: 'auto',
+  // 以给定字符偏移量开始的格式代码
   rangeStart: 0,
 };

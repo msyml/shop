@@ -6,9 +6,7 @@ const serves = (serve: string) => {
     baseURL: serve,
     timeout: 1000,
     headers: {
-      common: {
-        Authorization: 'Bearer ' + localStorage.token,
-      },
+      Authorization: 'Bearer ' + localStorage.token,
     },
   });
 
@@ -23,10 +21,7 @@ const serves = (serve: string) => {
 
   service.interceptors.response.use(
     (response) => {
-      if (response.status === 299) {
-        return Promise.reject(response);
-      }
-      return response;
+      return Promise.resolve(response);
     },
     (error) => {
       messageError(error.response.status, error.response.msg, {});
@@ -35,6 +30,6 @@ const serves = (serve: string) => {
   );
 
   return service;
-}
+};
 
 export default serves;

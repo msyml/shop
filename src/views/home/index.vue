@@ -5,14 +5,22 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
+import { onMounted } from 'vue';
+import { getProductList } from '@/api';
 
-onMounted(() => {
-
+defineProps({
+  msg: String,
 });
 
+onMounted(() => {
+  getProductList({}).then((res) => {
+    console.log(res);
+  });
+});
 </script>
 
-<style scoped lang="scss">
-
+<style scoped lang="less">
+div {
+    color: @mainColor;
+}
 </style>

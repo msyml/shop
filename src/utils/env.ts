@@ -8,11 +8,17 @@ export function getEnvConfig() {
   }
 }
 
-// VITE_IS_MOCK设置为boolean类型，从env中取到的值也是string类型的，要观察下
+/**
+*@method 获取默认接口BaseUrl
+*@author msyml
+*@version 1.0
+*@return {string} BaseUrl
+*/
 export function getDefaultBaseUrl() {
-  if ((import.meta.env as unknown as GlobEnvConfig).VITE_IS_MOCK === 'true') {
+  const {VITE_IS_MOCK, VITE_API_BASE_URL}  = import.meta.env as unknown as GlobEnvConfig;
+  if (VITE_IS_MOCK) {
     return '';
   } else {
-    return (import.meta.env as unknown as GlobEnvConfig).VITE_API_BASE_URL;
+    return VITE_API_BASE_URL;
   }
 }

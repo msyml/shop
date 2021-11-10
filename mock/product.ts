@@ -2,7 +2,7 @@ import { Random } from 'mockjs'
 import { MockMethod } from 'vite-plugin-mock'
 import { resultSuccess } from './util';
 
-const productList = (pageSize) => {
+const productList = (pageSize: number) => {
     const res: any[] = [];
     for (let i = 0; i < pageSize; i++) {
         res.push({

@@ -2,13 +2,12 @@
   "name": "shop",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --mode development --host",
     "start": "vite --mode development --host",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.24.0",
     "mockjs": "^1.1.0",
     "qs": "^6.10.1",
     "vue": "^3.2.16",
