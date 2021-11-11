@@ -1,6 +1,6 @@
 <template>
     <div>
-        home
+        Home
     </div>
 </template>
 
@@ -13,9 +13,9 @@ defineProps({
 });
 
 onMounted(() => {
-  getProductList({}).then((res) => {
-    console.log(res);
-  });
+  // getProductList({}).then((res) => {
+  //   console.log(res);
+  // });
 });
 </script>
 

@@ -1,6 +1,7 @@
 import { App } from 'vue';
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import { PageEnum } from '@/enums/pageEnum';
+import * as Views from '@/views'
 
 export const RootRoute: RouteRecordRaw = {
   path: '/',
@@ -15,7 +16,7 @@ export const LoginRoute: RouteRecordRaw = {
   // 可以自己指定路径以及引入组件测试
   path: '/login',
   name: 'Login',
-  component: () => import('views/login/index.vue'),
+  component: () => Views.Login,
   meta: {
     title: '登录',
   },
@@ -27,9 +28,37 @@ export const TabBarRoute: RouteRecordRaw = {
   children: [
     {
       path: '/home',
-      component: () => import('@/views/home/index.vue'),
+      component: () => Views.Home,
       meta: {
         title: "首页"
+      },
+    },
+    {
+      path: '/cart',
+      component: () => Views.Cart,
+      meta: {
+        title: "购物车"
+      },
+    },
+    {
+      path: '/explore',
+      component: () => Views.Explore,
+      meta: {
+        title: "探索"
+      },
+    },
+    {
+      path: '/account',
+      component: () => Views.Account,
+      meta: {
+        title: "账户"
+      },
+    },
+    {
+      path: '/favorite',
+      component: () => Views.Favorite,
+      meta: {
+        title: "喜欢"
       },
     },
   ],
