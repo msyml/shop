@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import { setupStore } from '@/store';
 import router, { setupRouter } from '@/router';
+import './assets/iconfont.js'
 
 async function bootstrap() {
   const app = createApp(App);

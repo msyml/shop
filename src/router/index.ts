@@ -23,7 +23,7 @@ export const LoginRoute: RouteRecordRaw = {
 
 export const TabBarRoute: RouteRecordRaw = {
   path: '/',
-  component: () => import('@/components/TabBar.vue'),
+  component: () => import('@/layout/Shop.vue'),
   children: [
     {
       path: '/home',
