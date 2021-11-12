@@ -1,7 +1,7 @@
 import { App } from 'vue';
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw, RouteLocationNormalized } from 'vue-router';
 import { PageEnum } from '@/enums/pageEnum';
-import * as Views from '@/views'
+import * as Views from '@/views';
 
 export const RootRoute: RouteRecordRaw = {
   path: '/',
@@ -12,15 +12,24 @@ export const RootRoute: RouteRecordRaw = {
   },
 };
 
-export const LoginRoute: RouteRecordRaw = {
-  // 可以自己指定路径以及引入组件测试
-  path: '/login',
-  name: 'Login',
-  component: () => Views.Login,
-  meta: {
-    title: '登录',
+export const LoginRoute: RouteRecordRaw[] = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => Views.Login,
+    meta: {
+      title: 'Login',
+    },
   },
-};
+  {
+    path: '/welcome',
+    name: 'Welcome',
+    component: () => Views.Welcome,
+    meta: {
+      title: 'Welcome',
+    },
+  }
+];
 
 export const TabBarRoute: RouteRecordRaw = {
   path: '/',
@@ -30,41 +39,41 @@ export const TabBarRoute: RouteRecordRaw = {
       path: '/home',
       component: () => Views.Home,
       meta: {
-        title: "首页"
+        title: 'Home',
       },
     },
     {
       path: '/cart',
       component: () => Views.Cart,
       meta: {
-        title: "购物车"
+        title: 'Cart',
       },
     },
     {
       path: '/explore',
       component: () => Views.Explore,
       meta: {
-        title: "探索"
+        title: 'Explore',
       },
     },
     {
       path: '/account',
       component: () => Views.Account,
       meta: {
-        title: "账户"
+        title: 'Account',
       },
     },
     {
       path: '/favorite',
       component: () => Views.Favorite,
       meta: {
-        title: "喜欢"
+        title: 'Favorite',
       },
     },
   ],
 };
 
-export const constantRouter: any[] = [LoginRoute, RootRoute, TabBarRoute];
+export const constantRouter: any[] = [...LoginRoute, RootRoute, TabBarRoute];
 
 const router = createRouter({
   history: createWebHistory(),
@@ -72,6 +81,13 @@ const router = createRouter({
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 });
+
+router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, next: () => any) => {
+  if (to.meta.title) {
+    document.title = to.meta.title as string;
+  }
+  next();
+})
 
 export function setupRouter(app: App) {
   app.use(router);
