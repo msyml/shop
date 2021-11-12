@@ -1,13 +1,13 @@
 <template>
     <div>
         <router-view></router-view>
-        <TabBar></TabBar>
+        <MsymlTabBar></MsymlTabBar>
     </div>
 </template>
 
 <script lang="ts" setup>
 import { onMounted } from "vue";
-import TabBar from '@/components/TabBar.vue'
+import MsymlTabBar from '@/components/MsymlTabBar.vue'
 
 
 onMounted(() => {

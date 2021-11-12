@@ -22,8 +22,8 @@
   .my-button {
     text-align: center;
     border-radius: 6vw;
-    width: 92vw;
     height: @button-height;
+    width: 92vw;
     line-height: @button-height;
     font-weight: bold;
     margin: 1vh 0;

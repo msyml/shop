@@ -40,7 +40,7 @@ const checkRoute = () => {
         options.forEach((item: TabBarItem, index: number) => {
             if (route.path === item.path) {
                 activeIndex.value = index;
-                throw new Error('匹配');
+                throw new Error('matching!');
             }
         });
     } catch { }

@@ -28,7 +28,15 @@ export const LoginRoute: RouteRecordRaw[] = [
     meta: {
       title: 'Welcome',
     },
-  }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => Views.Register,
+    meta: {
+      title: 'Sign Up',
+    },
+  },
 ];
 
 export const TabBarRoute: RouteRecordRaw = {

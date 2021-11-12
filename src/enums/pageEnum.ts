@@ -3,7 +3,7 @@ export enum PageEnum {
     BASE_LOGIN = '/login',
     BASE_LOGIN_NAME = 'Login',
     // 首页
-    BASE_HOME = '/home',
+    BASE_HOME = '/welcome',
     //首页跳转默认路由
     BASE_HOME_REDIRECT = '/home',
     // 错误

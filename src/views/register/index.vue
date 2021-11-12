@@ -1,6 +1,6 @@
 <template>
     <div>
-        Login
+        Register
     </div>
 </template>
 
@@ -14,4 +14,5 @@ onMounted(() => {
 </script>
 
 <style scoped lang="less">
+
 </style>
