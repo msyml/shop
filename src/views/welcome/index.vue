@@ -23,14 +23,13 @@
   const router = useRouter();
 
   const options: ButtonType[] = [
-    { type: 'default', label: 'Sign up', path: '/login' },
-    { type: 'border', label: 'Sign in', path: '/register' },
+    { type: 'default', label: 'Sign up', path: '/register' },
+    { type: 'border', label: 'Sign in', path: '/login' },
   ];
 
   const toPage = (path: string) => {
     router.push(path);
   };
-
 </script>
 
 <style scoped lang="less">
@@ -42,7 +41,6 @@
       margin-top: 4vh;
       font-size: 50vh;
       max-width: 96vw;
-      
     }
     p {
       text-align: center;

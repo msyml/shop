@@ -3,6 +3,7 @@
     <div class="back"><SimpleIcon icon="icon-back"></SimpleIcon></div>
     <span class="title">{{ props.title }}</span>
     <SimpleIcon class="main-figure" :icon="props.icon"></SimpleIcon>
+    <!-- <img src="@/assets/images/signup.png" /> -->
     <div class="content">
       <slot name="content"></slot>
     </div>
@@ -34,6 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 2vh;
     .back {
       align-self: flex-start;
       margin-left: @aroundMargin;
@@ -44,11 +46,14 @@
       font-size: @fontDefaultSize * 1.5;
     }
     .main-figure {
-      margin-top: 4vh;
-      font-size: 50vh;
-      max-width: 96vw;
-    //   https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter-function/drop-shadow()
-      filter: drop-shadow(0px 4px 4px #000000CC);
+      font-size: 100vw - 2 * @aroundMargin;
+      //   https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter-function/drop-shadow()
+      // filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0,0,0,0.5));
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      margin: 0 @aroundMargin;
     }
   }
 </style>
