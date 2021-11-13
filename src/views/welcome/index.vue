@@ -1,25 +1,22 @@
 <template>
   <div class="welcome">
-    <svg class="icon" aria-hidden="true">
-      <use xlink:href="#icon-welcome" />
-    </svg>
+    <SimpleIcon icon="icon-welcome"></SimpleIcon>
     <p class="title">Realax and shop</p>
     <p class="sub-title"
       >Shop online and get grocories delivered from stores to your home in as fast as 1 hour .</p
     >
-    <MsymlButton
+    <SimpleButton
       v-for="button in options"
       :key="button.path"
       :type="button.type"
       @click="toPage(button.path)"
-      >{{ button.label }}</MsymlButton
+      >{{ button.label }}</SimpleButton
     >
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { onMounted } from 'vue';
-  import MsymlButton from '@/components/MsymlButton.vue';
+  import { SimpleButton, SimpleIcon } from '@/components';
   import { useRouter } from 'vue-router';
   import { ButtonType } from './types';
 
@@ -34,7 +31,6 @@
     router.push(path);
   };
 
-  onMounted(() => {});
 </script>
 
 <style scoped lang="less">
@@ -46,17 +42,19 @@
       margin-top: 4vh;
       font-size: 50vh;
       max-width: 96vw;
+      
     }
     p {
       text-align: center;
       color: @titleColor;
+      font-size: @fontDefaultSize * 1.1;
       width: 68vw;
     }
     .title {
+      margin-top: 8vw;
+      margin-bottom: 2vw;
       font-weight: bold;
-    }
-    .sub-title {
-      font-size: 4.4vw;
+      font-size: @fontDefaultSize * 1.3;
     }
   }
 </style>

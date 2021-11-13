@@ -1,21 +1,12 @@
 <template>
-    <div>
-        <router-view></router-view>
-        <MsymlTabBar></MsymlTabBar>
-    </div>
+  <div>
+    <router-view></router-view>
+    <SimpleTabBar></SimpleTabBar>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from "vue";
-import MsymlTabBar from '@/components/MsymlTabBar.vue'
-
-
-onMounted(() => {
-
-});
-
+  import { SimpleTabBar } from '@/components';
 </script>
 
-<style scoped lang="less">
-
-</style>
+<style scoped lang="less"></style>
