@@ -1,23 +1,32 @@
 <template>
   <div class="sign-base">
-    <div class="back"><SimpleIcon icon="icon-back"></SimpleIcon></div>
+    <div v-if="needBack" @click="back" class="back"><SimpleIcon icon="icon-back"></SimpleIcon></div>
     <span class="title">{{ props.title }}</span>
     <SimpleIcon class="main-figure" :icon="props.icon"></SimpleIcon>
     <!-- <img src="@/assets/images/signup.png" /> -->
     <div class="content">
       <slot name="content"></slot>
     </div>
-    <SimpleButton>{{ props.btnText }}</SimpleButton>
+    <!-- <SimpleButton>{{ props.btnText }}</SimpleButton> -->
+    <slot name="btns"></slot>
     <slot name="tips"></slot>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { SimpleButton, SimpleIcon } from '@/components';
+  import { SimpleIcon } from '@/components';
+  import { useRouter } from 'vue-router';
+
+  const router = useRouter();
+
+  const back = () => {
+    router.back();
+  };
+
   const props = defineProps({
-    btnText: {
-      type: String,
-      default: 'Next',
+    needBack: {
+      type: Boolean,
+      default: false,
     },
     icon: {
       type: String,

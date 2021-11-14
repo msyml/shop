@@ -18,7 +18,6 @@
 <script lang="ts" setup>
   import { SimpleButton, SimpleIcon } from '@/components';
   import { useRouter } from 'vue-router';
-  import { ButtonType } from './types';
 
   const router = useRouter();
 
@@ -27,8 +26,8 @@
     { type: 'border', label: 'Sign in', path: '/login' },
   ];
 
-  const toPage = (path: string) => {
-    router.push(path);
+  const toPage = (path?: string) => {
+    router.push(path as string);
   };
 </script>
 

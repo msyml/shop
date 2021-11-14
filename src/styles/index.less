@@ -9,3 +9,25 @@ body {
   padding: 0;
   margin: 0;
 }
+
+// 输入框
+.simple-input {
+  display: flex;
+  border-radius: @inputBorderRadius;
+  align-items: center;
+  height: @fontDefaultSize * 2;
+  background-color: @inputBackgroundColor;
+  padding: 1.6vw 3.2vw;
+  input {
+    flex: 1;
+    font-size: @fontDefaultSize;
+    background-color: @inputBackgroundColor;
+    border: none;
+    color: @inputFontColor;
+    padding-left: 4vw;
+  }
+  input::placeholder {
+    color: @inputFontColor;
+    border: none;
+  }
+}

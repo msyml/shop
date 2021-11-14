@@ -19,11 +19,12 @@
   .simple-input {
     display: flex;
     border-radius: @inputBorderRadius;
-    height: @fontDefaultSize * 3;
+    align-items: center;
+    height: @fontDefaultSize * 2;
     background-color: @inputBackgroundColor;
+    padding: 1.6vw 3.2vw;
     input {
       flex: 1;
-      border-radius: @inputBorderRadius;
       font-size: @fontDefaultSize;
       background-color: @inputBackgroundColor;
       border: none;
@@ -32,6 +33,7 @@
     }
     input::placeholder {
       color: @inputFontColor;
+      border: none;
     }
   }
 </style>

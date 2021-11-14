@@ -1,5 +1,10 @@
 import { App } from 'vue';
-import { createRouter, createWebHistory, RouteRecordRaw, RouteLocationNormalized } from 'vue-router';
+import {
+  createRouter,
+  createWebHistory,
+  RouteRecordRaw,
+  RouteLocationNormalized,
+} from 'vue-router';
 import { PageEnum } from '@/enums/pageEnum';
 import * as Views from '@/views';
 
@@ -35,6 +40,22 @@ export const LoginRoute: RouteRecordRaw[] = [
     component: () => Views.Register,
     meta: {
       title: 'Sign Up',
+    },
+  },
+  {
+    path: '/signPass',
+    name: 'SignPass',
+    component: () => Views.SignPass,
+    meta: {
+      title: 'SignPass',
+    },
+  },
+  {
+    path: '/signCode',
+    name: 'SignCode',
+    component: () => Views.SignCode,
+    meta: {
+      title: 'Sign Code',
     },
   },
 ];
@@ -95,7 +116,7 @@ router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, n
     document.title = to.meta.title as string;
   }
   next();
-})
+});
 
 export function setupRouter(app: App) {
   app.use(router);
