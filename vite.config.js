@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { viteMockServe } from 'vite-plugin-mock'
+import { viteMockServe } from 'vite-plugin-mock';
 import path from 'path';
+import styleImport from 'vite-plugin-style-import';
 
 export default defineConfig({
   resolve: {
@@ -20,11 +21,21 @@ export default defineConfig({
       plugins: path.resolve(__dirname, 'src/plugins'),
     },
   },
-  plugins: [vue(),
+  plugins: [
+    vue(),
     viteMockServe({
       mockPath: './mock',
       supportTs: true,
-    })
+    }),
+    styleImport({
+      libs: [
+        {
+          libraryName: 'vant',
+          esModule: true,
+          resolveStyle: (name) => `vant/es/${name}/style`,
+        },
+      ],
+    }),
   ],
   css: {
     preprocessorOptions: {
