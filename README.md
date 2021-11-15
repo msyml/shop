@@ -51,4 +51,6 @@
 
 ### SimpleInput可以优化一下
 
-### SignCode中输入数值自动跳转到下一个按钮，使用Vue3+的方式绑定ref
+### ~~SignCode中输入数值自动跳转到下一个按钮，使用Vue3+的方式绑定ref~~
+
+[解决方案](./src/views/register/signCode.vue)

@@ -1,27 +1,29 @@
 <template>
-  <SignBase class="sign-up" :needBack="true" icon="icon-sign-pass">
-    <template v-slot:content>
-      <p class="title">Enter the password</p>
-      <p class="desc">For the security & safety please choose a password</p>
-      <div class="simple-input" v-for="(item, index) in inputOptions" :key="item.placeholder">
-        <SimpleIcon class="icon" icon="icon-lock"></SimpleIcon>
-        <input
-          class="input"
-          :type="item.isShow ? '' : 'password'"
-          v-model="item.value"
-          :placeholder="item.placeholder"
-        />
-        <SimpleIcon
-          @click="changeShow(index)"
-          class="icon"
-          :icon="item.isShow ? 'icon-dont-show' : 'icon-show'"
-        ></SimpleIcon>
-      </div>
-    </template>
-    <template v-slot:btns>
-      <SimpleButton @click="toNextPage">Next</SimpleButton>
-    </template>
-  </SignBase>
+  <div>
+    <SignBase class="sign-up" :needBack="true" icon="icon-sign-pass">
+      <template v-slot:content>
+        <p class="title">Enter the password</p>
+        <p class="desc">For the security & safety please choose a password</p>
+        <div class="simple-input" v-for="(item, index) in inputOptions" :key="item.placeholder">
+          <SimpleIcon class="icon" icon="icon-lock"></SimpleIcon>
+          <input
+            class="input"
+            :type="item.isShow ? '' : 'password'"
+            v-model="item.value"
+            :placeholder="item.placeholder"
+          />
+          <SimpleIcon
+            @click="changeShow(index)"
+            class="icon"
+            :icon="item.isShow ? 'icon-dont-show' : 'icon-show'"
+          ></SimpleIcon>
+        </div>
+      </template>
+      <template v-slot:btns>
+        <SimpleButton @click="toNextPage">Next</SimpleButton>
+      </template>
+    </SignBase>
+  </div>
 </template>
 
 <script lang="ts" setup>

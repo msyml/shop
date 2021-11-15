@@ -1,29 +1,31 @@
 <template>
-  <SignBase class="code" icon="icon-sign-code" :needBack="true">
-    <template v-slot:content>
-      <p class="title">Enter Verification Code</p>
-      <p class="desc">We have sent SMS to: 046 XXX XX XX</p>
-      <div class="inputs">
-        <input
-          :id="'input' + index"
-          v-for="(item, index) in inputOptions"
-          :key="index"
-          maxlength="1"
-          class="line"
-          :ref="
-            (el) => {
-              if (el) inputs[index] = el;
-            }
-          "
-          @keyup="handlerInputKeyUp"
-          v-model="item.value"
-        />
-      </div>
-    </template>
-    <template v-slot:btns>
-      <SimpleButton @click="toNextPage">Next</SimpleButton>
-    </template>
-  </SignBase>
+  <div>
+    <SignBase class="code" icon="icon-sign-code" :needBack="true">
+      <template v-slot:content>
+        <p class="title">Enter Verification Code</p>
+        <p class="desc">We have sent SMS to: 046 XXX XX XX</p>
+        <div class="inputs">
+          <input
+            :id="'input' + index"
+            v-for="(item, index) in inputOptions"
+            :key="index"
+            maxlength="1"
+            class="line"
+            :ref="
+              (el) => {
+                if (el) inputs[index] = el;
+              }
+            "
+            @keyup="handlerInputKeyUp"
+            v-model="item.value"
+          />
+        </div>
+      </template>
+      <template v-slot:btns>
+        <SimpleButton @click="toNextPage">Next</SimpleButton>
+      </template>
+    </SignBase>
+  </div>
 </template>
 
 <script lang="ts" setup>
