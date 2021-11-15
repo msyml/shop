@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, reactive } from 'vue';
+  import { reactive } from 'vue';
   import { SimpleIcon, SimpleButton } from '@/components';
   import SignBase from '@/layout/SignBase.vue';
   import { useRouter } from 'vue-router';
