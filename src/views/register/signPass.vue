@@ -3,17 +3,6 @@
     <template v-slot:content>
       <p class="title">Enter the password</p>
       <p class="desc">For the security & safety please choose a password</p>
-      <!-- <div class="simple-input">
-        <SimpleIcon class="icon" icon="icon-lock"></SimpleIcon>
-        <input class="input" v-model="pass" placeholder="Password" />
-        <SimpleIcon class="icon" icon="icon-show"></SimpleIcon>
-      </div>
-      <div class="simple-input">
-        <SimpleIcon class="icon" icon="icon-lock"></SimpleIcon>
-        <input class="input" v-model="confirmPass" placeholder="Confirm Password" />
-        <SimpleIcon class="icon" icon="icon-show"></SimpleIcon>
-      </div> -->
-
       <div class="simple-input" v-for="(item, index) in inputOptions" :key="item.placeholder">
         <SimpleIcon class="icon" icon="icon-lock"></SimpleIcon>
         <input

@@ -63,6 +63,7 @@
       display: flex;
       flex-direction: column;
       margin: 0 @aroundMargin;
+      height: 30vh;
     }
   }
 </style>
