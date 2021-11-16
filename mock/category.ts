@@ -2,13 +2,12 @@ import { Random } from 'mockjs';
 import { MockMethod } from 'vite-plugin-mock';
 import { resultSuccess } from './util';
 
-const productList = (pageSize: number) => {
+const categoryList = (pageSize: number) => {
   const res: any[] = [];
   for (let i = 0; i < pageSize; i++) {
     res.push({
       id: '@integer(10,99999)',
       name: '@cname',
-      price: '@float(0,10,2,2)',
       image: Random.image('8*8', Random.color(), Random.color(), Random.first()),
     });
   }
@@ -17,11 +16,11 @@ const productList = (pageSize: number) => {
 
 export default [
   {
-    url: '/api/product/list',
+    url: '/api/category/list',
     method: 'get',
     response: ({ query }) => {
       const { page = 1, pageSize = 10 } = query;
-      const list = productList(Number(pageSize));
+      const list = categoryList(Number(pageSize));
       return resultSuccess({
         page: Number(page),
         pageSize: Number(pageSize),
