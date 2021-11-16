@@ -60,7 +60,7 @@
     justify-content: space-around;
     width: 100%;
     bottom: 0;
-    font-size: 4vw;
+    font-size: @fontDefaultSize;
     .item {
       z-index: 1;
       display: flex;
@@ -74,7 +74,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      top: -41.18%;
+      top: -50%;
       bottom: -1.47%;
       border-radius: 4vw 4vw 0 0;
       border: 1px solid #e9e9e9;
