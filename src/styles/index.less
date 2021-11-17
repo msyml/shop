@@ -36,3 +36,25 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+// 搜索框
+.search {
+  width: 100vw - @aroundMargin * 2;
+  height: @fontDefaultSize * 2;
+  display: flex;
+  position: relative;
+  color: #6d380577;
+  .icon {
+    position: absolute;
+    top: @fontDefaultSize * 0.5;
+    left: @fontDefaultSize;
+  }
+  input {
+    border: none;
+    border-radius: 0.8vw;
+    width: 100%;
+    height: 100%;
+    padding-left: @fontDefaultSize * 2.5;
+    background-color: #f3f3f3;
+  }
+}

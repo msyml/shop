@@ -19,3 +19,9 @@ interface PageResult<T> {
     pageCount: number;
     pageSize: number;
 }
+
+interface Category{
+  id: string;
+  name: string;
+  image: string;
+}

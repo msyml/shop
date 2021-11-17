@@ -37,8 +37,7 @@
   import { onMounted, ref } from 'vue';
   import { SimpleIcon, SimpleTitle } from '@/components';
   import { getCategoryList, getProductList } from '@/api';
-  import { Category, Product } from './types';
-  import { AxiosResponse } from 'axios';
+  import { Product } from './types';
 
   defineProps({
     msg: String,
@@ -49,11 +48,11 @@
 
   onMounted(() => {
     Promise.all([
-      getCategoryList({}).then((res: AxiosResponse<Result<PageResult<Category>>>) => {
-        categoryList.value = res.data.result.list;
+      getCategoryList({}).then((res: Result<PageResult<Category>>) => {
+        categoryList.value = res.result.list;
       }),
-      getProductList({}).then((res: AxiosResponse<Result<PageResult<Product>>>) => {
-        productList.value = res.data.result.list;
+      getProductList({}).then((res: Result<PageResult<Product>>) => {
+        productList.value = res.result.list;
       }),
     ]).then(() => {
       // loading = false
@@ -74,26 +73,7 @@
       font-weight: bold;
       color: @mainColor;
     }
-    .search {
-      width: 100vw - @aroundMargin * 2;
-      height: @fontDefaultSize * 2;
-      display: flex;
-      position: relative;
-      color: #6d380577;
-      .icon {
-        position: absolute;
-        top: @fontDefaultSize * 0.5;
-        left: @fontDefaultSize;
-      }
-      input {
-        border: none;
-        border-radius: 0.8vw;
-        width: 100%;
-        height: 100%;
-        padding-left: @fontDefaultSize * 2.5;
-        background-color: #f3f3f3;
-      }
-    }
+
     .simple-title {
       margin: 2vh 0;
     }
@@ -106,6 +86,7 @@
         flex-direction: column;
         align-items: center;
         width: 25vw;
+        color:#6d3805;
         margin: 0 3vw;
         .c-icon {
           font-size: @fontDefaultSize * 6;
@@ -127,7 +108,7 @@
         border: 1px solid #f0f0f0;
         border-radius: 16px;
         margin: 0 3vw;
-        box-shadow: 0vw 0vw 1vw 1vw rgba(0, 0, 0, 0.5);
+        box-shadow: 0vw 0vw 1vw 1vw rgba(0, 0, 0, 0.2);
         padding: 4vw;
         .image {
           width: 30vw;
@@ -139,12 +120,16 @@
         }
         .info {
           margin-top: 1vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
           .name {
             font-size: @fontDefaultSize * 1.5;
             color: #6d3805;
             font-weight: bold;
           }
           .unit {
+            font-size: @fontDefaultSize * 0.8;
             color: #929292;
           }
           .price {
