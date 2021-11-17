@@ -3,7 +3,7 @@ import App from './App.vue';
 import { setupStore } from '@/store';
 import router, { setupRouter } from '@/router';
 // 引入SVG图标
-import 'https://at.alicdn.com/t/font_2930737_l2vn8ssn3br.js?spm=a313x.7781069.1998910419.40&file=font_2930737_l2vn8ssn3br.js';
+import 'https://at.alicdn.com/t/font_2930737_n25f0j8n6s.js?spm=a313x.7781069.1998910419.40&file=font_2930737_n25f0j8n6s.js';
 // import './assets/iconfont.js'
 
 async function bootstrap() {

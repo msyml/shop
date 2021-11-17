@@ -8,7 +8,6 @@
       <SimpleIcon class="icon" icon="icon-search" />
       <input placeholder="Search" />
     </div>
-    <SimpleTitle class="simple-title"></SimpleTitle>
     <div class="category">
       <div class="category-item" v-for="item in categoryList" :key="item.id">
         <!-- <SimpleIcon class="c-icon" icon="icon-search"></SimpleIcon> -->
@@ -16,7 +15,6 @@
         {{ item.name }}
       </div>
     </div>
-    <SimpleTitle class="simple-title" title="Popular Deals"></SimpleTitle>
     <div class="popular">
       <div class="popular-item" v-for="item in productList" :key="item.id">
         <div class="image">
@@ -35,7 +33,7 @@
 
 <script lang="ts" setup>
   import { onMounted, ref } from 'vue';
-  import { SimpleIcon, SimpleTitle } from '@/components';
+  import { SimpleIcon } from '@/components';
   import { getCategoryList, getProductList } from '@/api';
   import { Product } from './types';
 
@@ -86,7 +84,7 @@
         flex-direction: column;
         align-items: center;
         width: 25vw;
-        color:#6d3805;
+        color: #6d3805;
         margin: 0 3vw;
         .c-icon {
           font-size: @fontDefaultSize * 6;

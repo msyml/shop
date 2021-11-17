@@ -76,6 +76,7 @@ export const TabBarRoute: RouteRecordRaw = {
       component: () => Views.Cart,
       meta: {
         title: 'Cart',
+        isNeedBack: true,
       },
     },
     {
@@ -90,6 +91,7 @@ export const TabBarRoute: RouteRecordRaw = {
       component: () => Views.Account,
       meta: {
         title: 'Account',
+        isNeedBack: true,
       },
     },
     {
@@ -97,6 +99,7 @@ export const TabBarRoute: RouteRecordRaw = {
       component: () => Views.Favorite,
       meta: {
         title: 'Favorite',
+        isNeedBack: true,
       },
     },
   ],

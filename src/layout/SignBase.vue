@@ -7,7 +7,6 @@
     <div class="content">
       <slot name="content"></slot>
     </div>
-    <!-- <SimpleButton>{{ props.btnText }}</SimpleButton> -->
     <slot name="btns"></slot>
     <slot name="tips"></slot>
   </div>
