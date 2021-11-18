@@ -68,7 +68,7 @@
     overflow-x: hidden;
     .title {
       display: flex;
-      margin: 4vh;
+      margin: 2vw;
       width: 100vw - @aroundMargin*3;
       justify-content: space-between;
       font-size: @fontDefaultSize * 1.2;
@@ -80,9 +80,6 @@
         color: @mainColor;
       }
     }
-  }
-
-  @media only screen and (max-width: 720px) {
     .simple-title {
       margin: 2vh 0;
     }
@@ -98,12 +95,7 @@
         width: 25vw;
         color: #6d3805;
         margin: 0 3vw;
-        .c-icon {
-          font-size: @fontDefaultSize * 6;
-          border-radius: 100%;
-        }
         img {
-          width: @fontDefaultSize * 6;
           border-radius: 100%;
         }
       }
@@ -121,8 +113,6 @@
         box-shadow: 0vw 0vw 1vw 1vw rgba(0, 0, 0, 0.2);
         padding: 4vw;
         .image {
-          width: 30vw;
-          height: 27vw;
           img {
             width: 100%;
             height: 100%;
@@ -166,6 +156,43 @@
       }
     }
   }
+
+  @media only screen and (max-width: 720px) {
+    .home {
+      .popular {
+        .popular-item {
+          .image {
+            width: 30vw;
+            height: 27vw;
+          }
+        }
+      }
+    }
+    .category-item {
+      img {
+        width: @fontDefaultSize * 6;
+      }
+    }
+  }
   @media only screen and (min-width: 721px) {
+    
+    .home {
+      font-size: 3.2vw;
+      .category {
+        .category-item {
+          img {
+            width: @fontDefaultSize * 3;
+          }
+        }
+      }
+      .popular {
+        .popular-item {
+          .image {
+            width: 10vw;
+            height: 9vw;
+          }
+        }
+      }
+    }
   }
 </style>
