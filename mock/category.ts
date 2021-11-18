@@ -19,7 +19,7 @@ export default [
     url: '/api/category/list',
     method: 'get',
     response: ({ query }) => {
-      const { page = 1, pageSize = 10 } = query;
+      const { page = 1, pageSize = 15 } = query;
       const list = categoryList(Number(pageSize));
       return resultSuccess({
         page: Number(page),

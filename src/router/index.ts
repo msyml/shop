@@ -69,6 +69,8 @@ export const TabBarRoute: RouteRecordRaw = {
       component: () => Views.Home,
       meta: {
         title: 'Home',
+        isNeedBack: false,
+        icon: 'icon-place',
       },
     },
     {
@@ -76,14 +78,14 @@ export const TabBarRoute: RouteRecordRaw = {
       component: () => Views.Cart,
       meta: {
         title: 'Cart',
-        isNeedBack: true,
       },
     },
     {
       path: '/explore',
       component: () => Views.Explore,
       meta: {
-        title: 'Explore',
+        title: 'Categories',
+        isNeedBack: false,
       },
     },
     {
@@ -91,7 +93,6 @@ export const TabBarRoute: RouteRecordRaw = {
       component: () => Views.Account,
       meta: {
         title: 'Account',
-        isNeedBack: true,
       },
     },
     {
@@ -99,7 +100,6 @@ export const TabBarRoute: RouteRecordRaw = {
       component: () => Views.Favorite,
       meta: {
         title: 'Favorite',
-        isNeedBack: true,
       },
     },
   ],

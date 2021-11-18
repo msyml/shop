@@ -73,13 +73,15 @@
     .background-box {
       position: absolute;
       left: 0;
+      z-index: 1;
       right: 0;
       top: -50%;
       bottom: -1.47%;
       border-radius: 4vw 4vw 0 0;
       border: 1px solid #e9e9e9;
       box-sizing: border-box;
-      box-shadow: 0 -3px 13px rgba(0, 0, 0, 0.06);
+      background-color: #fff;
+      box-shadow: 0 -3px 13px rgba(105, 76, 76, 0.06);
     }
   }
 </style>

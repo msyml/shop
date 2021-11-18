@@ -1,20 +1,21 @@
 <template>
   <div class="home">
-    <div class="top">
-      <SimpleIcon icon="icon-place"></SimpleIcon>
-      Lungangen
-    </div>
     <div class="search">
       <SimpleIcon class="icon" icon="icon-search" />
       <input placeholder="Search" />
     </div>
+    <div class="title"
+      ><span class="sub-title">Popular deals</span><span class="all"> See All</span></div
+    >
     <div class="category">
       <div class="category-item" v-for="item in categoryList" :key="item.id">
-        <!-- <SimpleIcon class="c-icon" icon="icon-search"></SimpleIcon> -->
         <img :src="item.image" />
         {{ item.name }}
       </div>
     </div>
+    <div class="title"
+      ><span class="sub-title">Popular deals </span><span class="all">See All</span></div
+    >
     <div class="popular">
       <div class="popular-item" v-for="item in productList" :key="item.id">
         <div class="image">
@@ -64,18 +65,29 @@
     flex-direction: column;
     align-items: center;
     height: 90vh;
-    justify-content: space-around;
     overflow-x: hidden;
-    .top {
-      font-size: @fontDefaultSize * 1.5;
+    .title {
+      display: flex;
+      margin: 4vh;
+      width: 100vw - @aroundMargin*3;
+      justify-content: space-between;
+      font-size: @fontDefaultSize * 1.2;
       font-weight: bold;
-      color: @mainColor;
+      .sub-title {
+        color: @tabBarUnActiveColor;
+      }
+      .all {
+        color: @mainColor;
+      }
     }
+  }
 
+  @media only screen and (max-width: 720px) {
     .simple-title {
       margin: 2vh 0;
     }
     .category {
+      margin-bottom: 4vh;
       display: flex;
       overflow-x: auto;
       width: 100vw;
@@ -153,5 +165,7 @@
         }
       }
     }
+  }
+  @media only screen and (min-width: 721px) {
   }
 </style>

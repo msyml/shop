@@ -1,26 +1,24 @@
 <template>
-  <div>
-    <SimpleTitle>
+  <div class="shop">
+    <SimpleTitle v-bind="options">
       <template v-slot:title>
-        {{ title }}
+        <SimpleIcon v-if="options.icon" :icon="options.icon"></SimpleIcon>{{ options.title }}
       </template>
     </SimpleTitle>
-    <router-view></router-view>
-    <SimpleTabBar></SimpleTabBar>
+    <router-view class="base"></router-view>
+    <SimpleTabBar class="tab"></SimpleTabBar>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { SimpleTabBar, SimpleTitle } from '@/components';
-  import { useStore } from 'vuex';
+  import { SimpleTabBar, SimpleTitle, SimpleIcon } from '@/components';
+  import { TitleOptions } from './types';
   import { useRouter, useRoute, onBeforeRouteUpdate } from 'vue-router';
-  import { computed, onMounted } from 'vue';
+  import { onMounted, ref } from 'vue';
   const router = useRouter();
   const route = useRoute();
-  const store = useStore();
-
-  const title = computed(() => {
-    return store.state.title;
+  const options = ref<TitleOptions>({
+    title: '',
   });
 
   onMounted(() => {
@@ -32,16 +30,26 @@
     router.isReady().then(() => {
       let arr = router.getRoutes().filter((item) => item.path === route.path);
       if (arr.length > 0) {
-        store.commit('changeTitle', arr[0].meta.title);
+        options.value = { ...arr[0].meta } as unknown as TitleOptions;
       }
     });
   };
 
   onBeforeRouteUpdate((to) => {
-    if (to.meta.title) {
-      store.commit('changeTitle', to.meta.title);
+    if (to.meta) {
+      options.value = { ...to.meta } as unknown as TitleOptions;
     }
   });
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+  .shop {
+    .base {
+      height: 82vh;
+      overflow:auto;
+    }
+    .tab{
+      z-index: 1;
+    }
+  }
+</style>

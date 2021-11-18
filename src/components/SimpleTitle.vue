@@ -1,12 +1,12 @@
 <template>
   <div class="simple-title">
-    <SimpleIcon class="left" icon="icon-back"></SimpleIcon>
-    <!-- <span class="title" :class="titlePosition">{{ props.title }}</span> -->
+    <SimpleIcon v-if="isNeedBack" class="left" icon="icon-back"></SimpleIcon>
+    <div v-else class="left"></div>
     <div class="title">
       <slot name="title"></slot>
     </div>
     <SimpleIcon class="right" v-if="props.isNeedAdd" icon="icon-add" @click="toAdd"></SimpleIcon>
-    <div class="right"></div>
+    <div v-else class="right"></div>
   </div>
 </template>
 
@@ -15,10 +15,6 @@
   import { useRouter } from 'vue-router';
   const router = useRouter();
   const props = defineProps({
-    title: {
-      type: String,
-      default: 'Categories',
-    },
     isNeedBack: {
       type: Boolean,
       default: true,
