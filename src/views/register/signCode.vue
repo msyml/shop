@@ -107,15 +107,14 @@
       font-weight: bold;
     }
     .inputs {
-      margin-top: 5vh;
       display: flex;
       font-size: @fontDefaultSize * 1.5;
       justify-content: space-around;
-      width: 100vw;
+      width: 375px;
       .line {
         border: none;
         text-align: center;
-        width: 12vw;
+        width: 72px;
         border-bottom: 2px solid @titleColor;
       }
     }

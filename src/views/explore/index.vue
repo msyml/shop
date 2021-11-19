@@ -40,8 +40,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 25vw;
-        margin: 1vh 4vw;
+        width: 150px;
         img {
           border-radius: 100%;
         }

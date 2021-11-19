@@ -58,13 +58,15 @@
 <style scoped lang="less">
   .sign-up {
     .simple-input ~ .simple-input {
-      margin-top: 2vw;
+      margin-top: 8px;
     }
     .flag {
-      font-size: @fontDefaultSize*2;
+      width: @fontDefaultSize*2;
+      height: @fontDefaultSize*2;
     }
     .down {
-      font-size: @fontDefaultSize*0.8;
+      width: @fontDefaultSize*0.8;
+      height: @fontDefaultSize*0.8;
       margin-left: @fontDefaultSize * 0.4;
     }
     P {
@@ -75,8 +77,6 @@
     }
     .desc {
       font-size: @fontDefaultSize * 1.1;
-      margin-left: 2.5vw;
-      margin-right: 2.5vw;
     }
   }
 </style>

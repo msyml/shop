@@ -43,10 +43,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 2vh;
     .back {
       align-self: flex-start;
       margin-left: @aroundMargin;
+      height: @fontDefaultSize * 1.5;
+
+      width: @fontDefaultSize * 1.5;
     }
     .title {
       color: @mainColor;
@@ -54,7 +56,8 @@
       font-size: @fontDefaultSize * 1.5;
     }
     .main-figure {
-      font-size: 100vw - 2 * @aroundMargin;
+      font-size: 375px - 2 * @aroundMargin;
+      width: 375px - 2 * @aroundMargin;
       //   https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter-function/drop-shadow()
       // filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0,0,0,0.5));
     }
@@ -62,7 +65,6 @@
       display: flex;
       flex-direction: column;
       margin: 0 @aroundMargin;
-      height: 30vh;
     }
   }
 </style>

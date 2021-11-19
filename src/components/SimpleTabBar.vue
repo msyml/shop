@@ -8,7 +8,7 @@
       :class="{ 'item-active': index === activeIndex }"
       @click="handlerTabBarClick(item, index)"
     >
-      <SimpleIcon :icon="item.icon"></SimpleIcon>
+      <SimpleIcon class="icon" :icon="item.icon"></SimpleIcon>
       {{ item.label }}
     </div>
   </div>
@@ -53,12 +53,12 @@
 
 <style scoped lang="less">
   .tab-bar {
-    background-color: #fff;
     color: @tabBarUnActiveColor;
+    background-color: #fff;
     display: flex;
-    position: absolute;
     justify-content: space-around;
-    width: 100%;
+    position: absolute;
+    width: 100vw;
     bottom: 0;
     font-size: @fontDefaultSize;
     .item {
@@ -66,6 +66,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      .icon {
+        width: @fontDefaultSize;
+        height: @fontDefaultSize;
+      }
     }
     .item-active {
       color: @mainColor;
@@ -77,7 +81,7 @@
       right: 0;
       top: -50%;
       bottom: -1.47%;
-      border-radius: 4vw 4vw 0 0;
+      border-radius: 16px 16px 0 0;
       border: 1px solid #e9e9e9;
       box-sizing: border-box;
       background-color: #fff;

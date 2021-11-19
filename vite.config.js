@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import { viteMockServe } from 'vite-plugin-mock';
 import path from 'path';
 import styleImport from 'vite-plugin-style-import';
+// import postCssPxToViewport from 'postcss-px-to-viewport';
 
 export default defineConfig({
   resolve: {
@@ -36,6 +37,9 @@ export default defineConfig({
         },
       ],
     }),
+    // postCssPxToViewport({
+    //   viewportWidth: 375,
+    // }),
   ],
   css: {
     preprocessorOptions: {

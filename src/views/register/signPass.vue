@@ -79,7 +79,7 @@
 <style scoped lang="less">
   .sign-up {
     .simple-input ~ .simple-input {
-      margin-top: 2vw;
+      margin-top: 8px;
     }
     .simple-input {
       .icon {

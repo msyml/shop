@@ -43,9 +43,9 @@
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-    margin-top: 2vh;
-    margin-bottom: 1vh;
-    height: 12vw;
+    margin-top: 24px;
+    margin-bottom: 4px;
+    height: @fontDefaultSize * 2.5;
     .left,
     .right {
       flex: 1;

@@ -1,0 +1,44 @@
+// 搜索框
+.search {
+  width: 375px - @aroundMargin * 2;
+  height: @fontDefaultSize * 2;
+  display: flex;
+  position: relative;
+  color: #6d380577;
+  font-size: @fontDefaultSize;
+  .icon {
+    position: absolute;
+    top: @fontDefaultSize * 0.5;
+    left: @fontDefaultSize;
+  }
+  input {
+    border: none;
+    border-radius: 3.2px;
+    width: 100%;
+    height: 100%;
+    padding-left: @fontDefaultSize * 2.5;
+    background-color: #f3f3f3;
+  }
+}
+
+// 输入框
+.simple-input {
+  display: flex;
+  border-radius: @inputBorderRadius;
+  align-items: center;
+  height: @fontDefaultSize * 2;
+  background-color: @inputBackgroundColor;
+  padding: 6.4px 12.8px;
+  input {
+    flex: 1;
+    font-size: @fontDefaultSize;
+    background-color: @inputBackgroundColor;
+    border: none;
+    color: @inputFontColor;
+    padding-left: 16px;
+  }
+  input::placeholder {
+    color: @inputFontColor;
+    border: none;
+  }
+}

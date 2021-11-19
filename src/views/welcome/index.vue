@@ -36,20 +36,20 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-top: @fontDefaultSize * 1.5;
     .icon {
-      margin-top: 4vh;
-      font-size: 50vh;
-      max-width: 96vw;
+      width: 360px;
+      height: 360px;
     }
     p {
       text-align: center;
       color: @titleColor;
       font-size: @fontDefaultSize * 1.1;
-      width: 68vw;
+      width: 272px;
     }
     .title {
-      margin-top: 8vw;
-      margin-bottom: 2vw;
+      margin-top: 32px;
+      margin-bottom: 8px;
       font-weight: bold;
       font-size: @fontDefaultSize * 1.3;
     }

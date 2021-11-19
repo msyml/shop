@@ -6,6 +6,7 @@ import router, { setupRouter } from '@/router';
 import 'https://at.alicdn.com/t/font_2930737_n25f0j8n6s.js?spm=a313x.7781069.1998910419.40&file=font_2930737_n25f0j8n6s.js';
 // import './assets/iconfont.js'
 
+
 async function bootstrap() {
   const app = createApp(App);
   // 挂载状态管理

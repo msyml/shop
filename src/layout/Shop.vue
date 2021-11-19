@@ -45,10 +45,9 @@
 <style scoped lang="less">
   .shop {
     .base {
-      height: 82vh;
-      overflow:auto;
+      overflow: auto;
     }
-    .tab{
+    .tab {
       z-index: 1;
     }
   }

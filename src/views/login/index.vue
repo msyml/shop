@@ -65,7 +65,7 @@
       font-size: @fontDefaultSize * 1.3;
     }
     .simple-input ~ .simple-input {
-      margin-top: 2vw;
+      margin-top: 32px;
     }
     .simple-input {
       .flag {
@@ -80,7 +80,7 @@
       }
     }
     .forgote {
-      margin: 1vw 0;
+      margin: 16px 0;
       text-align: right;
       color: @mainColor;
     }

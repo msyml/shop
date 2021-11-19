@@ -1,5 +1,5 @@
 <template>
-  <div class="my-button" :class="props.type">
+  <div class="my-button flex-row-center" :class="props.type">
     <slot></slot>
   </div>
 </template>
@@ -14,18 +14,14 @@
 </script>
 
 <style scoped lang="less">
-  @button-height: 6vh;
   .my-button {
-    // 水平竖直居中
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6vw;
-    width: 100vw - 2 * @aroundMargin;
+    border-radius: 96px;
+    width: 375px - 2 * @aroundMargin;
     font-weight: bold;
-    margin: 1vh 0;
+    font-size: @fontDefaultSize;
+    margin: 4px 0;
     border: 1px solid @mainColor;
-    height: @button-height;
+    height: @fontDefaultSize * 3;
     min-height: @fontDefaultSize * 1.5;
   }
   .default {

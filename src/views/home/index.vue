@@ -64,12 +64,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90vh;
     overflow-x: hidden;
     .title {
       display: flex;
-      margin: 2vw;
-      width: 100vw - @aroundMargin*3;
+      margin: 8px;
+      width: 375px - @aroundMargin*3;
       justify-content: space-between;
       font-size: @fontDefaultSize * 1.2;
       font-weight: bold;
@@ -81,20 +80,18 @@
       }
     }
     .simple-title {
-      margin: 2vh 0;
     }
     .category {
-      margin-bottom: 4vh;
       display: flex;
       overflow-x: auto;
-      width: 100vw;
+      width: 375px;
       .category-item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 25vw;
+        width: 100px;
         color: #6d3805;
-        margin: 0 3vw;
+        margin: 0 48px;
         img {
           border-radius: 100%;
         }
@@ -103,15 +100,15 @@
     .popular {
       display: flex;
       overflow-x: auto;
-      width: 100vw;
-      padding: 4vw;
+      width: 375px;
+      padding: 16px;
       .popular-item {
         position: relative;
         border: 1px solid #f0f0f0;
         border-radius: 16px;
-        margin: 0 3vw;
-        box-shadow: 0vw 0vw 1vw 1vw rgba(0, 0, 0, 0.2);
-        padding: 4vw;
+        margin: 0 48px;
+        box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
+        padding: 16px;
         .image {
           img {
             width: 100%;
@@ -119,7 +116,6 @@
           }
         }
         .info {
-          margin-top: 1vh;
           display: flex;
           flex-direction: column;
           justify-content: space-around;
@@ -135,13 +131,12 @@
           .price {
             color: @mainColor;
             font-size: @fontDefaultSize * 1.5;
-
             font-weight: bold;
           }
           .add {
             position: absolute;
-            right: 4vw;
-            bottom: 4vw;
+            right: 16px;
+            bottom: 16px;
             background-color: #3aa14c;
             color: #fff;
             width: @fontDefaultSize * 2;
@@ -162,8 +157,8 @@
       .popular {
         .popular-item {
           .image {
-            width: 30vw;
-            height: 27vw;
+            width: 120px;
+            height: 108px;
           }
         }
       }
@@ -175,9 +170,9 @@
     }
   }
   @media only screen and (min-width: 721px) {
-    
+
     .home {
-      font-size: 3.2vw;
+      font-size: 12.8px;
       .category {
         .category-item {
           img {
@@ -188,8 +183,8 @@
       .popular {
         .popular-item {
           .image {
-            width: 10vw;
-            height: 9vw;
+            width: 40px;
+            height: 36px;
           }
         }
       }

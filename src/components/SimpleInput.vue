@@ -22,14 +22,14 @@
     align-items: center;
     height: @fontDefaultSize * 2;
     background-color: @inputBackgroundColor;
-    padding: 1.6vw 3.2vw;
+    padding: 6.4px 12.8px;
     input {
       flex: 1;
       font-size: @fontDefaultSize;
       background-color: @inputBackgroundColor;
       border: none;
       color: @inputFontColor;
-      padding-left: 4vw;
+      padding-left: 16px;
     }
     input::placeholder {
       color: @inputFontColor;
