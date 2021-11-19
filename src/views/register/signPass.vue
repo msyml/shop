@@ -22,6 +22,7 @@
       <template v-slot:btns>
         <SimpleButton @click="toNextPage">Next</SimpleButton>
       </template>
+      <template v-slot:tips>&nbsp;</template>
     </SignBase>
   </div>
 </template>
@@ -78,17 +79,22 @@
 
 <style scoped lang="less">
   .sign-up {
+    font-size: @fontDefaultSize;
     .simple-input ~ .simple-input {
       margin-top: 8px;
     }
     .simple-input {
       .icon {
-        font-size: @fontDefaultSize*1.5;
+        width: @fontDefaultSize * 1.5;
+        height: @fontDefaultSize * 1.5;
       }
     }
     .title {
       color: @titleColor;
       font-weight: bold;
+    }
+    p ~ p {
+      margin-top: 0;
     }
     .desc {
       color: @titleColor;

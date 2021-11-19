@@ -78,5 +78,9 @@
     .desc {
       font-size: @fontDefaultSize * 1.1;
     }
+    .tips {
+      margin: 0;
+      font-size: @fontDefaultSize;
+    }
   }
 </style>

@@ -24,6 +24,7 @@
       <template v-slot:btns>
         <SimpleButton @click="toNextPage">Next</SimpleButton>
       </template>
+      <template v-slot:tips> </template>
     </SignBase>
   </div>
 </template>
@@ -98,6 +99,7 @@
 
 <style scoped lang="less">
   .code {
+    font-size: 16px;
     p {
       color: @titleColor;
       margin-left: @aroundMargin;
@@ -114,7 +116,7 @@
       .line {
         border: none;
         text-align: center;
-        width: 72px;
+        width: 48px;
         border-bottom: 2px solid @titleColor;
       }
     }

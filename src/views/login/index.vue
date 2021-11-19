@@ -60,22 +60,26 @@
 
 <style scoped lang="less">
   .login {
+    font-size: @fontDefaultSize;
+
     .tips {
       color: #6d3805;
-      font-size: @fontDefaultSize * 1.3;
     }
     .simple-input ~ .simple-input {
-      margin-top: 32px;
+      margin-top: 8px;
     }
     .simple-input {
       .flag {
-        font-size: @fontDefaultSize*2;
+        width: @fontDefaultSize*2;
+        height: @fontDefaultSize*2;
       }
       .show {
-        font-size: @fontDefaultSize*1.5;
+        width: @fontDefaultSize*1.5;
+        height: @fontDefaultSize*1.5;
       }
       .down {
-        font-size: @fontDefaultSize*0.8;
+        width: @fontDefaultSize*0.8;
+        height: @fontDefaultSize*0.8;
         margin-left: @fontDefaultSize * 0.4;
       }
     }
