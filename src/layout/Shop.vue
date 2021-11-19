@@ -2,7 +2,8 @@
   <div class="shop">
     <SimpleTitle v-bind="options">
       <template v-slot:title>
-        <SimpleIcon v-if="options.icon" :icon="options.icon"></SimpleIcon>{{ options.title }}
+        <SimpleIcon v-if="options.icon" class="icon" :icon="options.icon"></SimpleIcon
+        >{{ options.title }}
       </template>
     </SimpleTitle>
     <router-view class="base"></router-view>
@@ -44,6 +45,10 @@
 
 <style scoped lang="less">
   .shop {
+    .icon {
+      width: @fontDefaultSize*1.5;
+      height: @fontDefaultSize*1.5;
+    }
     .base {
       overflow: auto;
     }

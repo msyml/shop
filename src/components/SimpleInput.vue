@@ -1,35 +1,40 @@
 <template>
   <div class="simple-input">
-    <slot name="prefix"></slot>
+    <SimpleIcon class="icon" icon="icon-search" />
     <input :placeholder="props.placeholder" />
-    <slot name="suffix"></slot>
   </div>
 </template>
 
 <script lang="ts" setup>
+  import { SimpleIcon } from './index';
   const props = defineProps({
     placeholder: {
       type: String,
-      default: 'placeholder',
+      default: 'search',
     },
   });
 </script>
 
 <style scoped lang="less">
   .simple-input {
-    display: flex;
     border-radius: @inputBorderRadius;
-    align-items: center;
+    position: relative;
     height: @fontDefaultSize * 2;
     background-color: @inputBackgroundColor;
-    padding: 6.4px 12.8px;
+    font-size: @fontDefaultSize;
+    margin: 0 @fontDefaultSize;
     input {
-      flex: 1;
       font-size: @fontDefaultSize;
       background-color: @inputBackgroundColor;
       border: none;
       color: @inputFontColor;
-      padding-left: 16px;
+      padding-left: @fontDefaultSize * 2;
+    }
+    .icon {
+      position: absolute;
+      width: @fontDefaultSize;
+      height: @fontDefaultSize;
+      left: @fontDefaultSize;
     }
     input::placeholder {
       color: @inputFontColor;
