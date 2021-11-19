@@ -40,14 +40,17 @@
     .icon {
       width: 360px;
       height: 360px;
+      max-height: 40vh;
     }
     p {
+      flex: 1;
       text-align: center;
       color: @titleColor;
       font-size: @fontDefaultSize * 1.1;
       width: 272px;
     }
     .title {
+      flex: 1;
       margin-top: 32px;
       margin-bottom: 8px;
       font-weight: bold;

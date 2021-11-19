@@ -58,19 +58,6 @@
       });
       return;
     }
-    // try {
-    //   inputOptions.reduce((acc?: CheckPassInput, cur: CheckPassInput) =>  {
-    //     if (!cur.value || !acc.value) {
-    //       Notify({
-    //         type: 'danger',
-    //         message: `Password or Confirm Password Can't be empty`,
-    //       });
-    //       throw new Error('');
-    //     }
-    //   });
-    // } catch (e: any) {
-    //   return;
-    // }
     router.push({
       path: '/signCode',
     });

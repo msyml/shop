@@ -21,7 +21,7 @@ export const LoginRoute: RouteRecordRaw[] = [
   {
     path: '/login',
     name: 'Login',
-    component: () => Views.Login,
+    component: () => import('@/views/login/index.vue'),
     meta: {
       title: 'Login',
     },
@@ -29,7 +29,7 @@ export const LoginRoute: RouteRecordRaw[] = [
   {
     path: '/welcome',
     name: 'Welcome',
-    component: () => Views.Welcome,
+    component: () => import('@/views/welcome/index.vue'),
     meta: {
       title: 'Welcome',
     },
@@ -37,7 +37,7 @@ export const LoginRoute: RouteRecordRaw[] = [
   {
     path: '/register',
     name: 'Register',
-    component: () => Views.Register,
+    component: () => import('@/views/register/index.vue'),
     meta: {
       title: 'Sign Up',
     },
@@ -45,7 +45,7 @@ export const LoginRoute: RouteRecordRaw[] = [
   {
     path: '/signPass',
     name: 'SignPass',
-    component: () => Views.SignPass,
+    component: () => import('@/views/register/signPass.vue'),
     meta: {
       title: 'SignPass',
     },
@@ -53,7 +53,7 @@ export const LoginRoute: RouteRecordRaw[] = [
   {
     path: '/signCode',
     name: 'SignCode',
-    component: () => Views.SignCode,
+    component: () => import('@/views/register/signCode.vue'),
     meta: {
       title: 'Sign Code',
     },
@@ -66,7 +66,7 @@ export const TabBarRoute: RouteRecordRaw = {
   children: [
     {
       path: '/home',
-      component: () => Views.Home,
+      component: () => import('@/views/home/index.vue'),
       meta: {
         title: 'Home',
         isNeedBack: false,

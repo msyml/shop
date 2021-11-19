@@ -91,114 +91,116 @@
         }
       }
     }
+    .popular {
+      display: flex;
+      overflow-x: auto;
+      padding: 12px;
+      .popular-item {
+        position: relative;
+        border: 1px solid #f0f0f0;
+        border-radius: 16px;
+        margin: 0 16px;
+        box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
+        padding: 8px;
+        .image {
+          img {
+            width: 108px;
+            height: 100%;
+            border-radius: 16px;
+          }
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .name {
+            font-size: @fontDefaultSize;
+            color: #6d3805;
+            font-weight: bold;
+          }
+          .unit {
+            font-size: @fontDefaultSize * 0.8;
+            color: #929292;
+          }
+          .price {
+            color: @mainColor;
+            font-size: @fontDefaultSize;
+            font-weight: bold;
+          }
+          .add {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+            background-color: #3aa14c;
+            color: #fff;
+            width: @fontDefaultSize * 1.5;
+            height: @fontDefaultSize * 1.5;
+            line-height: @fontDefaultSize * 1.5;
+            border-radius: 100%;
+            font-weight: bold;
+            font-size: @fontDefaultSize;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    //   .category {
+    //     display: flex;
+    //     overflow-x: auto;
+    //     width: 375px;
+    //     .category-item {
+    //       display: flex;
+    //       flex-direction: column;
+    //       align-items: center;
+    //       width: 100px;
+    //       color: #6d3805;
+    //       margin: 0 48px;
+    //       img {
+    //         border-radius: 100%;
+    //       }
+    //     }
+    //   }
+
+    //   }
+    // }
+
+    // // @media only screen and (max-width: 720px) {
+    // //   .home {
+    // //     .popular {
+    // //       .popular-item {
+    // //         .image {
+    // //           width: 120px;
+    // //           height: 108px;
+    // //         }
+    // //       }
+    // //     }
+    // //   }
+    // //   .category-item {
+    // //     img {
+    // //       width: @fontDefaultSize * 6;
+    // //     }
+    // //   }
+    // // }
+    // // @media only screen and (min-width: 721px) {
+    // //   .home {
+    // //     font-size: 12.8px;
+    // //     .category {
+    // //       .category-item {
+    // //         img {
+    // //           width: @fontDefaultSize * 3;
+    // //         }
+    // //       }
+    // //     }
+    // //     .popular {
+    // //       .popular-item {
+    // //         .image {
+    // //           width: 40px;
+    // //           height: 36px;
+    // //         }
+    // //       }
+    // //     }
+    // //   }
+    // // }
   }
-
-  //   .category {
-  //     display: flex;
-  //     overflow-x: auto;
-  //     width: 375px;
-  //     .category-item {
-  //       display: flex;
-  //       flex-direction: column;
-  //       align-items: center;
-  //       width: 100px;
-  //       color: #6d3805;
-  //       margin: 0 48px;
-  //       img {
-  //         border-radius: 100%;
-  //       }
-  //     }
-  //   }
-  //   .popular {
-  //     display: flex;
-  //     overflow-x: auto;
-  //     width: 375px;
-  //     padding: 16px;
-  //     .popular-item {
-  //       position: relative;
-  //       border: 1px solid #f0f0f0;
-  //       border-radius: 16px;
-  //       margin: 0 48px;
-  //       box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
-  //       padding: 16px;
-  //       .image {
-  //         img {
-  //           width: 100%;
-  //           height: 100%;
-  //         }
-  //       }
-  //       .info {
-  //         display: flex;
-  //         flex-direction: column;
-  //         justify-content: space-around;
-  //         .name {
-  //           font-size: @fontDefaultSize * 1.5;
-  //           color: #6d3805;
-  //           font-weight: bold;
-  //         }
-  //         .unit {
-  //           font-size: @fontDefaultSize * 0.8;
-  //           color: #929292;
-  //         }
-  //         .price {
-  //           color: @mainColor;
-  //           font-size: @fontDefaultSize * 1.5;
-  //           font-weight: bold;
-  //         }
-  //         .add {
-  //           position: absolute;
-  //           right: 16px;
-  //           bottom: 16px;
-  //           background-color: #3aa14c;
-  //           color: #fff;
-  //           width: @fontDefaultSize * 2;
-  //           height: @fontDefaultSize * 2;
-  //           line-height: @fontDefaultSize * 2;
-  //           border-radius: 100%;
-  //           font-weight: bold;
-  //           font-size: @fontDefaultSize * 1.5;
-  //           text-align: center;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-
-  // // @media only screen and (max-width: 720px) {
-  // //   .home {
-  // //     .popular {
-  // //       .popular-item {
-  // //         .image {
-  // //           width: 120px;
-  // //           height: 108px;
-  // //         }
-  // //       }
-  // //     }
-  // //   }
-  // //   .category-item {
-  // //     img {
-  // //       width: @fontDefaultSize * 6;
-  // //     }
-  // //   }
-  // // }
-  // // @media only screen and (min-width: 721px) {
-  // //   .home {
-  // //     font-size: 12.8px;
-  // //     .category {
-  // //       .category-item {
-  // //         img {
-  // //           width: @fontDefaultSize * 3;
-  // //         }
-  // //       }
-  // //     }
-  // //     .popular {
-  // //       .popular-item {
-  // //         .image {
-  // //           width: 40px;
-  // //           height: 36px;
-  // //         }
-  // //       }
-  // //     }
-  // //   }
-  // // }
 </style>
