@@ -89,6 +89,14 @@ export const TabBarRoute: RouteRecordRaw = {
       },
     },
     {
+      path: '/exploreDetail',
+      component: () => import('@/views/explore/detail.vue'),
+      meta: {
+        title: 'Fruits',
+        isNeedBack: false,
+      },
+    },
+    {
       path: '/account',
       component: () => Views.Account,
       meta: {

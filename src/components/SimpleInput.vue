@@ -17,7 +17,7 @@
 
 <style scoped lang="less">
   .simple-input {
-    border-radius: @inputBorderRadius;
+    border-radius: 4px;
     position: relative;
     height: @fontDefaultSize * 2;
     background-color: @inputBackgroundColor;

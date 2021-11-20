@@ -8,7 +8,7 @@ const categoryList = (pageSize: number) => {
     res.push({
       id: '@integer(10,99999)',
       name: '@cname',
-      image: Random.image('8*8', Random.color(), Random.color(), Random.first()),
+      image: Random.image('4*4', Random.color(), Random.color(), Random.first()),
     });
   }
   return res;
@@ -19,7 +19,7 @@ export default [
     url: '/api/category/list',
     method: 'get',
     response: ({ query }) => {
-      const { page = 1, pageSize = 15 } = query;
+      const { page = 1, pageSize = 30 } = query;
       const list = categoryList(Number(pageSize));
       return resultSuccess({
         page: Number(page),

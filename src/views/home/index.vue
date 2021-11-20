@@ -7,7 +7,7 @@
     <div class="category">
       <div class="category-item" v-for="item in categoryList" :key="item.id">
         <img :src="item.image" />
-        {{ item.name }}
+        <span>{{ item.name }}</span>
       </div>
     </div>
     <div class="title"
@@ -63,7 +63,6 @@
     font-size: @fontDefaultSize;
     .title {
       display: flex;
-      margin: 8px 0;
       padding: 0 @aroundMargin*1.5;
       justify-content: space-between;
       font-size: @fontDefaultSize * 1.2;
@@ -82,11 +81,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100px;
         color: #6d3805;
         margin: 0 12px;
         img {
-          width: @fontDefaultSize * 3;
           border-radius: 100%;
         }
       }
@@ -104,8 +101,6 @@
         padding: 8px;
         .image {
           img {
-            width: 108px;
-            height: 100%;
             border-radius: 16px;
           }
         }
@@ -114,17 +109,14 @@
           flex-direction: column;
           justify-content: space-around;
           .name {
-            font-size: @fontDefaultSize;
             color: #6d3805;
             font-weight: bold;
           }
           .unit {
-            font-size: @fontDefaultSize * 0.8;
             color: #929292;
           }
           .price {
             color: @mainColor;
-            font-size: @fontDefaultSize;
             font-weight: bold;
           }
           .add {
@@ -133,74 +125,96 @@
             bottom: 8px;
             background-color: #3aa14c;
             color: #fff;
-            width: @fontDefaultSize * 1.5;
-            height: @fontDefaultSize * 1.5;
-            line-height: @fontDefaultSize * 1.5;
             border-radius: 100%;
             font-weight: bold;
-            font-size: @fontDefaultSize;
             text-align: center;
           }
         }
       }
     }
+  }
+  @media only screen and (max-width: 720px) {
+    .home {
+      .title {
+        margin: 24px 0;
+      }
+      .category {
+        .category-item {
+          img {
+            width: @fontDefaultSize * 5;
+          }
+        }
+      }
+      .popular {
+        .popular-item {
+          .image {
+            img {
+              width: 108px;
+              height: 100%;
+            }
+          }
+          .info {
+            .name {
+              font-size: @fontDefaultSize;
+            }
+            .unit {
+              font-size: @fontDefaultSize * 0.8;
+            }
+            .price {
+              font-size: @fontDefaultSize;
+            }
+            .add {
+              width: @fontDefaultSize * 1.5;
+              height: @fontDefaultSize * 1.5;
+              line-height: @fontDefaultSize * 1.5;
+              font-size: @fontDefaultSize;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 721px) {
+    .home {
+      .title {
+        margin: 8px 0;
+      }
+      .category {
+        font-size: @fontDefaultSize * 2;
 
-    //   .category {
-    //     display: flex;
-    //     overflow-x: auto;
-    //     width: 375px;
-    //     .category-item {
-    //       display: flex;
-    //       flex-direction: column;
-    //       align-items: center;
-    //       width: 100px;
-    //       color: #6d3805;
-    //       margin: 0 48px;
-    //       img {
-    //         border-radius: 100%;
-    //       }
-    //     }
-    //   }
-
-    //   }
-    // }
-
-    // // @media only screen and (max-width: 720px) {
-    // //   .home {
-    // //     .popular {
-    // //       .popular-item {
-    // //         .image {
-    // //           width: 120px;
-    // //           height: 108px;
-    // //         }
-    // //       }
-    // //     }
-    // //   }
-    // //   .category-item {
-    // //     img {
-    // //       width: @fontDefaultSize * 6;
-    // //     }
-    // //   }
-    // // }
-    // // @media only screen and (min-width: 721px) {
-    // //   .home {
-    // //     font-size: 12.8px;
-    // //     .category {
-    // //       .category-item {
-    // //         img {
-    // //           width: @fontDefaultSize * 3;
-    // //         }
-    // //       }
-    // //     }
-    // //     .popular {
-    // //       .popular-item {
-    // //         .image {
-    // //           width: 40px;
-    // //           height: 36px;
-    // //         }
-    // //       }
-    // //     }
-    // //   }
-    // // }
+        .category-item {
+          img {
+            width: @fontDefaultSize * 8;
+          }
+        }
+      }
+      .popular {
+        .popular-item {
+          .image {
+            img {
+              width: @fontDefaultSize * 15;
+              height: 100%;
+            }
+          }
+          .info {
+            .name {
+              font-size: @fontDefaultSize*3;
+            }
+            .unit {
+              font-size: @fontDefaultSize * 2;
+            }
+            .price {
+              font-size: @fontDefaultSize * 3;
+            }
+            .add {
+              width: @fontDefaultSize * 4.5;
+              height: @fontDefaultSize * 4.5;
+              line-height: @fontDefaultSize * 4.5;
+              font-size: @fontDefaultSize * 3;
+            }
+          }
+        }
+      }
+    }
   }
 </style>

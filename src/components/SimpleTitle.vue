@@ -43,7 +43,7 @@
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-    margin-top: 24px;
+    margin-top: 12px;
     margin-bottom: 4px;
     height: @fontDefaultSize * 2.5;
     .left,
