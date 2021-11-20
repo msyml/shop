@@ -37,7 +37,8 @@
   const checkRoute = () => {
     try {
       options.forEach((item: TabBarItem, index: number) => {
-        if (route.path === item.path) {
+        let reg = new RegExp(item.path, 'g');
+        if (reg.test(route.path)) {
           activeIndex.value = index;
           throw new Error('matching!');
         }

@@ -33,7 +33,6 @@
   import { onMounted, ref } from 'vue';
   import { SimpleIcon, SimpleInput } from '@/components';
   import { getCategoryList, getProductList } from '@/api';
-  import { Product } from './types';
 
   defineProps({
     msg: String,

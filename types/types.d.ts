@@ -25,3 +25,10 @@ interface Category{
   name: string;
   image: string;
 }
+
+interface Product{
+  id: string;
+  name: string;
+  image: string;
+  price: number;
+}

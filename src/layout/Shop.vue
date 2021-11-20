@@ -2,8 +2,11 @@
   <div class="shop">
     <SimpleTitle v-bind="options">
       <template v-slot:title>
-        <SimpleIcon v-if="options.icon" class="icon" :icon="options.icon"></SimpleIcon
-        >{{ options.title }}
+        <span v-if="!options.customTitle">
+          <SimpleIcon v-if="options.icon" class="icon" :icon="options.icon"></SimpleIcon
+          >{{ options.title }}
+        </span>
+        <span v-else>{{ storeTitle }}</span>
       </template>
     </SimpleTitle>
     <router-view class="base"></router-view>
@@ -15,11 +18,17 @@
   import { SimpleTabBar, SimpleTitle, SimpleIcon } from '@/components';
   import { TitleOptions } from './types';
   import { useRouter, useRoute, onBeforeRouteUpdate } from 'vue-router';
-  import { onMounted, ref } from 'vue';
+  import { computed, onMounted, ref } from 'vue';
+  import { useStore } from 'vuex';
   const router = useRouter();
+  const store = useStore();
   const route = useRoute();
   const options = ref<TitleOptions>({
     title: '',
+  });
+
+  const storeTitle = computed(() => {
+    return store.state.title;
   });
 
   onMounted(() => {

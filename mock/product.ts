@@ -7,7 +7,7 @@ const productList = (pageSize: number) => {
   for (let i = 0; i < pageSize; i++) {
     res.push({
       id: '@integer(10,99999)',
-      name: '@cname',
+      name: '@cword(1,3)',
       price: '@float(0,10,2,2)',
       image: Random.image('8*8', Random.color(), Random.color(), Random.first()),
     });

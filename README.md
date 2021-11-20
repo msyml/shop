@@ -56,3 +56,5 @@
 ### ~~SignCode中输入数值自动跳转到下一个按钮，使用Vue3+的方式绑定ref~~
 
 [解决方案](./src/views/register/signCode.vue)
+
+### 有空可以优化下选择分类的动画效果

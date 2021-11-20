@@ -2,31 +2,62 @@
   <div class="detail">
     <SimpleInput></SimpleInput>
     <div class="category">
-      <div v-for="item in categoryList" :key="item.id" class="item item-active">
+      <div
+        v-for="item in categoryList"
+        :key="item.id"
+        class="item"
+        :class="{ 'item-active': activeName === item.name }"
+        @click="changeCategory(item)"
+      >
         <p>{{ item.name }}</p>
       </div>
     </div>
-    <div class="product"></div>
+    <div class="product">
+      <div class="item" v-for="item in productList" :key="item.id">
+        {{ item.name }}
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { onMounted, ref } from 'vue';
+  import { onMounted, ref, watch } from 'vue';
   import { SimpleInput } from '@/components';
-  import { getCategoryList } from '@/api';
+  import { getCategoryList, getProductList } from '@/api';
+  import { useStore } from 'vuex';
 
+  const store = useStore();
   const categoryList = ref<Category[]>([]);
+  const productList = ref<Product[]>([]);
+  const activeName = ref<String>('');
 
   onMounted(() => {
     getCategory();
   });
+
+  watch(activeName, (value) => {
+    store.dispatch('asyncChangeTitle', value);
+  });
+
+  const changeCategory = (item: Category) => {
+    activeName.value = item.name;
+    const para = {
+      id: item.id,
+    };
+    getProductList(para).then((res: Result<PageResult<Product>>) => {
+      productList.value = res.result.list;
+    });
+  };
 
   const getCategory = () => {
     const para = {
       pageSize: 15,
     };
     getCategoryList(para).then((res: Result<PageResult<Category>>) => {
-      categoryList.value = res.result.list;
+      if (res.result.list.length > 0) {
+        categoryList.value = res.result.list;
+        changeCategory(res.result.list[0]);
+      }
     });
   };
 </script>

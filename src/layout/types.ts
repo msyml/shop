@@ -5,4 +5,5 @@ export interface TitleOptions {
   addPath?: string;
   titlePosition?: string;
   icon?: string;
+  customTitle?: boolean;
 }

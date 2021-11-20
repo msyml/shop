@@ -94,6 +94,7 @@ export const TabBarRoute: RouteRecordRaw = {
       meta: {
         title: 'Fruits',
         isNeedBack: false,
+        customTitle: true,
       },
     },
     {
