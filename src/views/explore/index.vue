@@ -8,7 +8,7 @@
         v-for="item in categoryList"
         :key="item.id"
       >
-        <img :src="item.image" />
+        <van-image class="img" :src="item.image" />
         {{ item.name }}
       </div>
     </div>
@@ -57,7 +57,7 @@
         align-items: center;
         width: 120px;
         font-size: 16px;
-        img {
+        .img {
           width: 80%;
           border-radius: 100%;
         }

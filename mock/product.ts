@@ -8,6 +8,8 @@ const productList = (pageSize: number) => {
     res.push({
       id: '@integer(10,99999)',
       name: '@cword(1,3)',
+      count: '@integer(1,10)',
+      unit: 'kg',
       price: '@float(0,10,2,2)',
       image: Random.image('8*8', Random.color(), Random.color(), Random.first()),
     });

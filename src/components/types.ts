@@ -3,3 +3,5 @@ export interface TabBarItem {
   label: string;
   path: string;
 }
+
+export interface ProductItem extends Product{}

@@ -14,21 +14,23 @@ interface Result<T> {
 }
 
 interface PageResult<T> {
-    list: T[],
-    page: number;
-    pageCount: number;
-    pageSize: number;
+  list: T[];
+  page: number;
+  pageCount: number;
+  pageSize: number;
 }
 
-interface Category{
+interface Category {
   id: string;
   name: string;
   image: string;
 }
 
-interface Product{
+interface Product {
   id: string;
   name: string;
+  count: number;
   image: string;
   price: number;
+  unit: string;
 }

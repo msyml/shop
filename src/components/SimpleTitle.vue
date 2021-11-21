@@ -48,10 +48,10 @@
     height: @fontDefaultSize * 2.5;
     .left,
     .right {
-      flex: 1;
+      padding: 0 8px;
+      width: 16px;
     }
     .title {
-      flex: 6;
       text-align: center;
       font-size: @fontDefaultSize* 1.5;
       align-self: flex-end;

@@ -6,7 +6,7 @@
     >
     <div class="category">
       <div class="category-item" v-for="item in categoryList" :key="item.id">
-        <img :src="item.image" />
+        <van-image class="img" :src="item.image" />
         <span>{{ item.name }}</span>
       </div>
     </div>
@@ -16,7 +16,7 @@
     <div class="popular">
       <div class="popular-item" v-for="item in productList" :key="item.id">
         <div class="image">
-          <img :src="item.image" />
+          <van-image class="img" :src="item.image" />
         </div>
         <div class="info">
           <div class="name">{{ item.name }}</div>
@@ -99,7 +99,7 @@
         box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
         padding: 8px;
         .image {
-          img {
+          .img {
             border-radius: 16px;
           }
         }
@@ -139,7 +139,7 @@
       }
       .category {
         .category-item {
-          img {
+          .img {
             width: @fontDefaultSize * 5;
           }
         }
@@ -147,7 +147,7 @@
       .popular {
         .popular-item {
           .image {
-            img {
+            .img {
               width: 108px;
               height: 100%;
             }

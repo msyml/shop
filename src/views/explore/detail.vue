@@ -13,16 +13,15 @@
       </div>
     </div>
     <div class="product">
-      <div class="item" v-for="item in productList" :key="item.id">
-        {{ item.name }}
-      </div>
+      <SimpleProductCard class="item" v-for="item in productList" :key="item.id" :product="item">
+      </SimpleProductCard>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
   import { onMounted, ref, watch } from 'vue';
-  import { SimpleInput } from '@/components';
+  import { SimpleInput, SimpleProductCard } from '@/components';
   import { getCategoryList, getProductList } from '@/api';
   import { useStore } from 'vuex';
 
@@ -69,6 +68,7 @@
       color: @mainColor;
       overflow-x: auto;
       font-weight: bold;
+      font-size: @fontDefaultSize*1;
       .item {
         flex: 1;
         word-break: keep-all;
@@ -76,6 +76,18 @@
       }
       .item-active {
         border-bottom: 2px solid @mainColor;
+      }
+    }
+    .product {
+      flex-wrap: wrap;
+      display: flex;
+      padding-top: 16px;
+      overflow: auto;
+      height: calc(100vh - 224px);
+      .item {
+        width: 144px;
+        margin: 8px;
+        padding: 12px;
       }
     }
   }

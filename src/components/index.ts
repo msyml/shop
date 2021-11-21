@@ -4,5 +4,6 @@ import SimpleIcon from './SimpleIcon.vue';
 import SimpleTabBar from './SimpleTabBar.vue';
 import SimpleTitle from './SimpleTitle.vue';
 import SimpleInput from './SimpleInput.vue';
+import SimpleProductCard from './SimpleProductCard.vue';
 
-export { SimpleTabBar, SimpleIcon, SimpleInput, SimpleTitle, SimpleButton };
+export { SimpleTabBar, SimpleIcon, SimpleInput, SimpleTitle, SimpleButton, SimpleProductCard };
