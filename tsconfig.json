@@ -13,6 +13,8 @@
     "resolveJsonModule": true,
     // 启用对CommonJs的支持
     "esModuleInterop": true,
+    // 当索引缺乏索引签名的对象时，禁止' noImplicitAny '错误。 对象枚举赋值报错解决
+    "suppressImplicitAnyIndexErrors": true,
     "lib": ["esnext", "dom"],
     // 指定不在源文件中，但是要包含进去的类型包名
     "types": ["vite/client"],

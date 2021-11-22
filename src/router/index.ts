@@ -74,6 +74,14 @@ export const TabBarRoute: RouteRecordRaw = {
       },
     },
     {
+      path: '/homeProductDetail',
+      component: () => import('@/views/home/productDetail.vue'),
+      meta: {
+        title: '',
+        isNeedBack: true,
+      },
+    },
+    {
       path: '/cart',
       component: () => import('@/views/cart/index.vue'),
       meta: {

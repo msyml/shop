@@ -4,7 +4,7 @@
       <van-swipe-cell v-for="(item, index) in cartList" :key="item.id">
         <div class="item">
           <div class="image">
-            <van-image round :src="item.image" />
+            <van-image lazy-load class="img" round :src="item.image" />
           </div>
           <div class="info">
             <div class="name">
@@ -81,6 +81,13 @@
         display: flex;
         border-bottom: 1px solid rgba(109, 56, 5, 0.09);
         padding: 8px;
+        .image {
+          width: @fontDefaultSize * 4;
+          .img {
+            height: 100%;
+            width: 100%;
+          }
+        }
         .info {
           padding-left: 16px;
           display: flex;
@@ -111,6 +118,7 @@
               }
               .count {
                 border: none;
+                font-size: @fontDefaultSize * 1;
                 background-color: #f4f4f4;
                 width: @fontDefaultSize * 3;
                 margin: 0;
@@ -119,6 +127,7 @@
               }
             }
             .price {
+              font-size: @fontDefaultSize * 1;
               .unit {
                 font-size: @fontDefaultSize * 0.8;
               }

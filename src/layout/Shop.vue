@@ -1,6 +1,6 @@
 <template>
   <div class="shop">
-    <SimpleTitle v-bind="options">
+    <SimpleTitle class="title" v-bind="options">
       <template v-slot:title>
         <span v-if="!options.customTitle">
           <SimpleIcon v-if="options.icon" class="icon" :icon="options.icon"></SimpleIcon
@@ -54,6 +54,7 @@
 
 <style scoped lang="less">
   .shop {
+ 
     .icon {
       width: @fontDefaultSize*1.5;
       height: @fontDefaultSize*1.5;

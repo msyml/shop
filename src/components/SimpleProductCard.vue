@@ -1,7 +1,7 @@
 <template>
-  <div class="popular-item">
+  <div class="popular-item" @click="toDetail(product.id)">
     <div class="image">
-      <van-image :src="product.image" />
+      <van-image lazy-load :src="product.image" />
     </div>
     <div class="info">
       <div class="name">{{ product.name }}</div>
@@ -13,12 +13,24 @@
 </template>
 
 <script lang="ts" setup>
+  import { useRouter } from 'vue-router';
+  const router = useRouter();
   const props = defineProps({
     product: {
       type: Object,
       required: true,
     },
   });
+
+  const toDetail = (id: string) => {
+    const path = `\homeProductDetail`;
+    router.push({
+      path,
+      query: {
+        id: id,
+      },
+    });
+  };
 </script>
 
 <style scoped lang="less">

@@ -17,6 +17,19 @@ const productList = (pageSize: number) => {
   return res;
 };
 
+const productDetail = (id: string) => {
+  return {
+    id: id,
+    desc: '@paragraph',
+    name: '@cword(1,3)',
+    count: '@integer(1,10)',
+    unit: 'kg',
+    isFavorite: Random.boolean(),
+    price: '@float(0,10,2,2)',
+    image: Random.image('8*8', Random.color(), Random.color(), Random.first()),
+  };
+};
+
 export default [
   {
     url: '/api/product/list',
@@ -29,6 +42,17 @@ export default [
         pageSize: Number(pageSize),
         pageCount: 50,
         list,
+      });
+    },
+  },
+  {
+    url: '/api/product/detail',
+    method: 'get',
+    response: ({ query }) => {
+      const { id = 1 } = query;
+      const detail = productDetail(id);
+      return resultSuccess({
+        ...detail,
       });
     },
   },

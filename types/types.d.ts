@@ -33,4 +33,6 @@ interface Product {
   image: string;
   price: number;
   unit: string;
+  desc?: string;
+  isFavorite?: boolean;
 }

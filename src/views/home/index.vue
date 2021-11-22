@@ -6,7 +6,7 @@
     >
     <div class="category">
       <div class="category-item" v-for="item in categoryList" :key="item.id">
-        <van-image class="img" :src="item.image" />
+        <van-image lazy-load class="img" :src="item.image" />
         <span>{{ item.name }}</span>
       </div>
     </div>
@@ -14,9 +14,16 @@
       ><span class="sub-title">Popular deals </span><span class="all">See All</span></div
     >
     <div class="popular">
-      <div class="popular-item" v-for="item in productList" :key="item.id">
+      <SimpleProductCard class="item" v-for="item in productList" :key="item.id" :product="item">
+      </SimpleProductCard>
+      <!-- <div
+        class="popular-item"
+        v-for="item in productList"
+        :key="item.id"
+        @click="toDetail(item.id)"
+      >
         <div class="image">
-          <van-image class="img" :src="item.image" />
+          <van-image lazy-load class="img" :src="item.image" />
         </div>
         <div class="info">
           <div class="name">{{ item.name }}</div>
@@ -24,14 +31,14 @@
           <div class="price">${{ item.price }}</div>
           <div class="add">+</div>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
   import { onMounted, ref } from 'vue';
-  import { SimpleIcon, SimpleInput } from '@/components';
+  import { SimpleInput, SimpleProductCard } from '@/components';
   import { getCategoryList, getProductList } from '@/api';
 
   defineProps({

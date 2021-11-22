@@ -1,6 +1,6 @@
 <template>
   <div class="simple-title">
-    <SimpleIcon v-if="isNeedBack" class="left" icon="icon-back"></SimpleIcon>
+    <SimpleIcon v-if="isNeedBack" @click="back" class="left" icon="icon-back"></SimpleIcon>
     <div v-else class="left"></div>
     <div class="title">
       <slot name="title"></slot>
@@ -34,6 +34,10 @@
     if (props.isNeedAdd) {
       router.push(props.addPath as string);
     }
+  };
+
+  const back = () => {
+    router.back();
   };
 </script>
 

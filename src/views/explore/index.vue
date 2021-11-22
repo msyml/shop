@@ -8,7 +8,7 @@
         v-for="item in categoryList"
         :key="item.id"
       >
-        <van-image class="img" :src="item.image" />
+        <van-image lazy-load class="img" :src="item.image" />
         {{ item.name }}
       </div>
     </div>
