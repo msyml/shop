@@ -60,7 +60,7 @@
 
 <style scoped lang="less">
   .login {
-    font-size: @fontDefaultSize;
+    
 
     .tips {
       color: #6d3805;

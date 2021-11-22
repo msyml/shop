@@ -80,7 +80,7 @@
     }
     .tips {
       margin: 0;
-      font-size: @fontDefaultSize;
+      
     }
   }
 </style>

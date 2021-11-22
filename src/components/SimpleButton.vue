@@ -18,7 +18,7 @@
     border-radius: 96px;
     width: 375px - 2 * @aroundMargin;
     font-weight: bold;
-    font-size: @fontDefaultSize;
+    
     margin: 4px 0;
     border: 1px solid @mainColor;
     height: @fontDefaultSize * 3;

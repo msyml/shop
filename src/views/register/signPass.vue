@@ -66,7 +66,7 @@
 
 <style scoped lang="less">
   .sign-up {
-    font-size: @fontDefaultSize;
+    
     .simple-input ~ .simple-input {
       margin-top: 8px;
     }

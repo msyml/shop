@@ -77,20 +77,14 @@
   @media only screen and (max-width: 720px) {
     .popular-item {
       .info {
-        .name {
-          font-size: @fontDefaultSize;
-        }
         .unit {
           font-size: @fontDefaultSize * 0.8;
-        }
-        .price {
-          font-size: @fontDefaultSize;
         }
         .add {
           width: @fontDefaultSize * 1.5;
           height: @fontDefaultSize * 1.5;
           line-height: @fontDefaultSize * 1.5;
-          font-size: @fontDefaultSize;
+          
         }
       }
     }

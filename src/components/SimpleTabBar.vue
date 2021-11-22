@@ -61,7 +61,7 @@
     position: absolute;
     width: 100vw;
     bottom: 0;
-    font-size: @fontDefaultSize;
+    
     .item {
       z-index: 1;
       display: flex;

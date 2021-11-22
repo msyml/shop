@@ -20,13 +20,13 @@ const productList = (pageSize: number) => {
 const productDetail = (id: string) => {
   return {
     id: id,
-    desc: '@paragraph',
+    desc: '@paragraph(1)',
     name: '@cword(1,3)',
     count: '@integer(1,10)',
     unit: 'kg',
     isFavorite: Random.boolean(),
     price: '@float(0,10,2,2)',
-    image: Random.image('8*8', Random.color(), Random.color(), Random.first()),
+    image: Random.image('24*24', Random.color(), Random.color(), Random.first()),
   };
 };
 

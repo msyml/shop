@@ -8,7 +8,10 @@
       <div class="title">
         {{ detail.name }}
       </div>
-      <div class="price"> {{ detail.price }}/{{ detail.unit }} </div>
+      <div class="price">
+        <span class="number">${{ detail.price }}</span
+        >/{{ detail.unit }}
+      </div>
       <div class="desc">
         {{ detail.desc }}
       </div>
@@ -116,12 +119,36 @@
       flex-direction: column;
       color: #6d3805;
       border-bottom: 1px solid rgba(109, 56, 5, 0.17);
+      margin-bottom: @fontDefaultSize;
+      .image {
+        align-self: center;
+        max-width: @fontDefaultSize * 16;
+        max-height: @fontDefaultSize * 16;
+      }
+      .title {
+        font-size: @fontDefaultSize * 2;
+        font-weight: bold;
+      }
+      .price {
+        margin-bottom: @fontDefaultSize*1;
+        .number {
+          font-size: @fontDefaultSize*1.5;
+        }
+        .number::after {
+          content: ' ';
+        }
+      }
+      .desc {
+        font-size: @fontDefaultSize * 0.9;
+        margin-bottom: @fontDefaultSize;
+      }
       .button {
         align-self: center;
         text-align: center;
       }
       .icons {
         display: flex;
+        margin-bottom: @fontDefaultSize*0.5;
         .oper {
           flex: 1;
           background-color: #f4f4f4;
@@ -130,7 +157,7 @@
           padding: 2px;
           display: flex;
           margin-right: @fontDefaultSize*2;
-          height: @fontDefaultSize* 1.5;
+          height: @fontDefaultSize* 2;
           align-items: center;
           .icon {
             color: #6d3805;
@@ -138,11 +165,12 @@
             border-radius: 100%;
             width: @fontDefaultSize * 1.5;
             height: @fontDefaultSize * 1.5;
+            padding: @fontDefaultSize * 0.3;
           }
           .count {
             flex: 1;
             border: none;
-            font-size: @fontDefaultSize * 1;
+            font-size: @fontDefaultSize * 1.5;
             background-color: #f4f4f4;
             width: @fontDefaultSize * 3;
             margin: 0;
@@ -162,7 +190,6 @@
     }
 
     .related {
-      padding-top: @fontDefaultSize * 2;
       .title {
         color: #6d3805;
         padding-left: @fontDefaultSize;

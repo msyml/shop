@@ -21,10 +21,10 @@
     position: relative;
     height: @fontDefaultSize * 2;
     background-color: @inputBackgroundColor;
-    font-size: @fontDefaultSize;
+    
     margin: 0 @fontDefaultSize;
     input {
-      font-size: @fontDefaultSize;
+      
       background-color: @inputBackgroundColor;
       border: none;
       color: @inputFontColor;
