@@ -33,14 +33,16 @@
         </template>
       </van-swipe-cell>
     </div>
-    <div class="btn"></div>
+    <div class="btn">
+      <SimpleButton>CheckOut</SimpleButton>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
   import { onMounted, ref } from 'vue';
   import { getProductList } from '@/api';
-  import { SimpleIcon } from '@/components';
+  import { SimpleIcon, SimpleButton } from '@/components';
 
   const cartList = ref<Product[]>([]);
 
@@ -138,6 +140,11 @@
           }
         }
       }
+    }
+    .btn {
+      position: absolute;
+      bottom: @fontDefaultSize * 4;
+      margin: 0 @fontDefaultSize;
     }
     .delete {
       height: 100%;

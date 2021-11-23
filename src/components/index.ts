@@ -5,5 +5,14 @@ import SimpleTabBar from './SimpleTabBar.vue';
 import SimpleTitle from './SimpleTitle.vue';
 import SimpleInput from './SimpleInput.vue';
 import SimpleProductCard from './SimpleProductCard.vue';
+import SimpleEmpty from './SimpleEmpty.vue';
 
-export { SimpleTabBar, SimpleIcon, SimpleInput, SimpleTitle, SimpleButton, SimpleProductCard };
+export {
+  SimpleTabBar,
+  SimpleIcon,
+  SimpleInput,
+  SimpleTitle,
+  SimpleButton,
+  SimpleProductCard,
+  SimpleEmpty,
+};

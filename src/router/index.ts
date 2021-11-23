@@ -90,7 +90,7 @@ export const TabBarRoute: RouteRecordRaw = {
     },
     {
       path: '/explore',
-      component: () => Views.Explore,
+      component: () => import('@/views/explore/index.vue'),
       meta: {
         title: 'Categories',
         isNeedBack: false,
@@ -114,7 +114,7 @@ export const TabBarRoute: RouteRecordRaw = {
     },
     {
       path: '/favorite',
-      component: () => Views.Favorite,
+      component: () => import('@/views/favorite/index.vue'),
       meta: {
         title: 'Favorite',
       },

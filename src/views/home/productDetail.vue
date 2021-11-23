@@ -3,28 +3,28 @@
     <ProductBackgroundIcon class="back"></ProductBackgroundIcon>
     <div class="info">
       <div class="image">
-        <van-image lazy-load class="img" :src="detail.image" />
+        <van-image lazy-load class="img" :src="image" />
       </div>
       <div class="title">
-        {{ detail.name }}
+        {{ name }}
       </div>
       <div class="price">
-        <span class="number">${{ detail.price }}</span
-        >/{{ detail.unit }}
+        <span class="number">${{ price }}</span
+        >/{{ unit }}
       </div>
       <div class="desc">
-        {{ detail.desc }}
+        {{ desc }}
       </div>
       <div class="icons">
         <div class="oper"
           ><SimpleIcon class="icon" @click="changeCount('minus')" icon="icon-minus" />
-          <input class="count" v-model="detail.count" />
+          <input class="count" v-model="count" />
           <SimpleIcon class="icon" @click="changeCount('add')" icon="icon-add"
         /></div>
         <SimpleIcon
           class="icon heart"
           @click="changeFavorite"
-          :icon="detail.isFavorite ? 'icon-heart' : 'icon-heart-not-fill'"
+          :icon="isFavorite ? 'icon-heart' : 'icon-heart-not-fill'"
         ></SimpleIcon>
       </div>
       <div class="button">
@@ -42,7 +42,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { onMounted, reactive, ref } from 'vue';
+  import { onMounted, reactive, ref, toRefs } from 'vue';
   import { getProductDetail, getProductList } from '@/api';
   import { SimpleIcon, SimpleButton, SimpleProductCard } from '@/components';
   import ProductBackgroundIcon from '@/layout/ProductBackgroundIcon.vue';
@@ -61,6 +61,8 @@
     desc: '',
     unit: '',
   });
+
+  const { id, name, image, count, price, desc, unit, isFavorite } = toRefs(detail);
 
   const getDetail = (id: string) => {
     const para = {

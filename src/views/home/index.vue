@@ -16,22 +16,6 @@
     <div class="popular">
       <SimpleProductCard class="item" v-for="item in productList" :key="item.id" :product="item">
       </SimpleProductCard>
-      <!-- <div
-        class="popular-item"
-        v-for="item in productList"
-        :key="item.id"
-        @click="toDetail(item.id)"
-      >
-        <div class="image">
-          <van-image lazy-load class="img" :src="item.image" />
-        </div>
-        <div class="info">
-          <div class="name">{{ item.name }}</div>
-          <div class="unit">1kg,priceg</div>
-          <div class="price">${{ item.price }}</div>
-          <div class="add">+</div>
-        </div>
-      </div>-->
     </div>
   </div>
 </template>
@@ -66,7 +50,7 @@
   .home {
     display: flex;
     flex-direction: column;
-    
+
     .title {
       display: flex;
       padding: 0 @aroundMargin*1.5;
@@ -161,19 +145,16 @@
           }
           .info {
             .name {
-              
             }
             .unit {
               font-size: @fontDefaultSize * 0.8;
             }
             .price {
-              
             }
             .add {
               width: @fontDefaultSize * 1.5;
               height: @fontDefaultSize * 1.5;
               line-height: @fontDefaultSize * 1.5;
-              
             }
           }
         }
