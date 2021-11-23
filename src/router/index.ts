@@ -107,9 +107,39 @@ export const TabBarRoute: RouteRecordRaw = {
     },
     {
       path: '/account',
-      component: () => Views.Account,
+      component: () => import('@/views/account/index.vue'),
       meta: {
-        title: 'Account',
+        title: 'Profile',
+      },
+    },
+    {
+      path: '/accountEditProfile',
+      component: () => import('@/views/account/editProfile.vue'),
+      meta: {
+        title: 'Edit Profile',
+      },
+    },
+    {
+      path: '/accountChangePassword',
+      component: () => import('@/views/account/changePassword.vue'),
+      meta: {
+        title: 'Change Password',
+      },
+    },
+    {
+      path: '/accountEditCards',
+      component: () => import('@/views/account/editCard.vue'),
+      meta: {
+        title: 'new Card',
+      },
+    },
+    {
+      path: '/accountCards',
+      component: () => import('@/views/account/cards.vue'),
+      meta: {
+        title: 'My Cards',
+        isNeedAdd: true,
+        addPath: 'accountEditCards',
       },
     },
     {

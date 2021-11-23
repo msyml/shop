@@ -1,20 +1,19 @@
 <template>
-  <div class="favorite">
-    <SimpleEmpty v-if="list.length === 0" icon="icon-favorite-empty">
+  <div class="cards">
+    <SimpleEmpty v-if="list.length === 0" icon="icon-no-card">
       <template v-slot:desc>
         <div class="desc">
-          <p class="title">Your heart is empty</p>
-          <p>Start fall in love with some good goods </p>
+          <p class="title">No Saved Card</p>
+          <p>You can save your card info to make purchase easier, faster.</p>
         </div>
       </template>
-      <template v-slot:btns> <SimpleButton>Start shoping</SimpleButton> </template>
     </SimpleEmpty>
-    <div class="favorite" v-else></div>
+    <div class="list" v-else></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { onMounted, reactive, toRefs } from 'vue';
+  import { reactive, toRefs } from 'vue';
   import { SimpleEmpty, SimpleButton } from '@/components';
 
   const state = reactive({
@@ -22,12 +21,10 @@
   });
 
   const { list } = toRefs(state);
-
-  onMounted(() => {});
 </script>
 
 <style scoped lang="less">
-  .favorite {
+  .cards {
     .desc {
       display: flex;
       flex-direction: column;
