@@ -32,7 +32,6 @@
   import { SimpleIcon, SimpleButton } from '@/components';
   import SignBase from '@/layout/SignBase.vue';
   import { useRouter } from 'vue-router';
-  import { CheckPassInput } from './types';
   import { Notify } from 'vant';
 
   const router = useRouter();

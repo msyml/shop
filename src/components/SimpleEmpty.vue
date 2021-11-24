@@ -27,6 +27,7 @@
     height: calc(100vh - 108px);
     overflow: hidden;
     .icon {
+      padding-top: @fontDefaultSize * 2;
       max-height: 50vh;
     }
     .btns {

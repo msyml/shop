@@ -29,7 +29,7 @@
   .account {
     .item {
       display: flex;
-      margin: @fontDefaultSize;
+      margin: @fontDefaultSize*1.5;
       color: #6d3805;
       align-items: center;
       .icon {

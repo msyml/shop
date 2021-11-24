@@ -36,3 +36,10 @@ interface Product {
   desc?: string;
   isFavorite?: boolean;
 }
+
+interface CheckPassInput {
+  value: string;
+  isShow: boolean;
+  placeholder: string;
+  name?: string;
+}

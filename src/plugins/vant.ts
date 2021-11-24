@@ -10,6 +10,7 @@ import {
   Switch,
   Tab,
   Tabs,
+  Notify,
   ConfigProvider,
 } from 'vant';
 
@@ -24,6 +25,7 @@ const vantComps = [
   Switch,
   Tab,
   Tabs,
+  Notify,
   ConfigProvider,
 ];
 
