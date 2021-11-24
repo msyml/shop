@@ -6,7 +6,6 @@ import {
   RouteLocationNormalized,
 } from 'vue-router';
 import { PageEnum } from '@/enums/pageEnum';
-import * as Views from '@/views';
 
 export const RootRoute: RouteRecordRaw = {
   path: '/',
@@ -109,7 +108,44 @@ export const TabBarRoute: RouteRecordRaw = {
       path: '/account',
       component: () => import('@/views/account/index.vue'),
       meta: {
+        title: 'Account',
+      },
+    },
+    {
+      path: '/accountProfile',
+      component: () => import('@/views/account/profile.vue'),
+      meta: {
         title: 'Profile',
+      },
+    },
+    {
+      path: '/accountOrders',
+      component: () => import('@/views/account/orders.vue'),
+      meta: {
+        title: 'Orders',
+      },
+    },
+    {
+      path: '/accountAddress',
+      component: () => import('@/views/account/address.vue'),
+      meta: {
+        title: 'Address',
+        isNeedAdd: true,
+        addPath: 'accountEditAddress',
+      },
+    },
+    {
+      path: '/accountEditAddress',
+      component: () => import('@/views/account/editAddress.vue'),
+      meta: {
+        title: 'New Address',
+      },
+    },
+    {
+      path: '/accountPayment',
+      component: () => import('@/views/account/payment.vue'),
+      meta: {
+        title: 'Payment',
       },
     },
     {

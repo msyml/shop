@@ -1,21 +1,27 @@
 <template>
   <div class="detail">
     <SimpleInput></SimpleInput>
-    <div class="category">
-      <div
-        v-for="item in categoryList"
-        :key="item.id"
-        class="item"
-        :class="{ 'item-active': activeName === item.name }"
-        @click="changeCategory(item)"
-      >
-        <p>{{ item.name }}</p>
+    <van-config-provider :theme-vars="themeVars">
+      <div class="category">
+        <!-- <div
+          v-for="item in categoryList"
+          :key="item.id"
+          class="item"
+          :class="{ 'item-active': activeName === item.name }"
+          @click="changeCategory(item)"
+        >
+          <p>{{ item.name }}</p>
+        </div> -->
+
+        <van-tabs v-model:active="active" @change="changeCategory">
+          <van-tab v-for="item in categoryList" :key="item.id" :title="item.name"></van-tab>
+        </van-tabs>
       </div>
-    </div>
-    <div class="product">
-      <SimpleProductCard class="item" v-for="item in productList" :key="item.id" :product="item">
-      </SimpleProductCard>
-    </div>
+      <div class="product">
+        <SimpleProductCard class="item" v-for="item in productList" :key="item.id" :product="item">
+        </SimpleProductCard>
+      </div>
+    </van-config-provider>
   </div>
 </template>
 
@@ -38,11 +44,20 @@
     store.dispatch('asyncChangeTitle', value);
   });
 
-  const changeCategory = (item: Category) => {
-    activeName.value = item.name;
+  const active = ref(0);
+
+  const themeVars = {
+    tabsBottomBarColor: '#ff5e00',
+    tabTextColor: '#804F1E',
+    tabActiveTextColor: '#804F1E',
+  };
+
+  const changeCategory = (index: number) => {
+    active.value = index;
     const para = {
-      id: item.id,
+      id: categoryList.value[index].id,
     };
+    activeName.value = categoryList.value[index].name;
     getProductList(para).then((res: Result<PageResult<Product>>) => {
       productList.value = res.result.list;
     });
@@ -55,7 +70,7 @@
     getCategoryList(para).then((res: Result<PageResult<Category>>) => {
       if (res.result.list.length > 0) {
         categoryList.value = res.result.list;
-        changeCategory(res.result.list[0]);
+        changeCategory(0);
       }
     });
   };
