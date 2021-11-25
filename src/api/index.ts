@@ -5,14 +5,22 @@ const defaultBaseUrl = getDefaultBaseUrl();
 
 const defaultHttp = http(defaultBaseUrl);
 
-export function getProductList(params: any) {
-  return defaultHttp.get('/api/product/list', { params: params }).then((res) => res.data);
+export async function getProductList(params: any) {
+  const res = await defaultHttp.get('/api/product/list', { params: params });
+  return res.data;
 }
 
-export function getProductDetail(params: any) {
-  return defaultHttp.get('/api/product/detail', { params: params }).then((res) => res.data);
+export async function getProductDetail(params: any) {
+  const res = await defaultHttp.get('/api/product/detail', { params: params });
+  return res.data;
 }
 
-export function getCategoryList(params: any) {
-  return defaultHttp.get('/api/category/list', { params: params }).then((res) => res.data);
+export async function getCategoryList(params: any) {
+  const res = await defaultHttp.get('/api/category/list', { params: params });
+  return res.data;
+}
+
+export async function getCardList(params: any) {
+  const res = await defaultHttp.get('/api/card/list', { params: params });
+  return res.data;
 }
