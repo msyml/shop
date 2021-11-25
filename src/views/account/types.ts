@@ -11,3 +11,18 @@ export interface Card {
   name: string;
   isCheck: boolean;
 }
+
+export interface Order {
+  id: string;
+  name: string;
+  number: number | string;
+  type: number | string;
+  count: number;
+  orderTime: Date;
+}
+
+
+export interface GoingType {
+  icon: string;
+  desc: string;
+}

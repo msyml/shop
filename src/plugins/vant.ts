@@ -12,6 +12,8 @@ import {
   Tabs,
   Notify,
   ConfigProvider,
+  Step,
+  Steps,
 } from 'vant';
 
 const vantComps = [
@@ -27,6 +29,8 @@ const vantComps = [
   Tabs,
   Notify,
   ConfigProvider,
+  Step,
+  Steps,
 ];
 
 export function setupVant(app: App<Element>): void {

@@ -24,3 +24,8 @@ export async function getCardList(params: any) {
   const res = await defaultHttp.get('/api/card/list', { params: params });
   return res.data;
 }
+
+export async function getOrderList(params: any) {
+  const res = await defaultHttp.get('/api/order/list', { params: params });
+  return res.data;
+}
