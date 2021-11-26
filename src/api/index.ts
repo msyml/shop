@@ -29,3 +29,8 @@ export async function getOrderList(params: any) {
   const res = await defaultHttp.get('/api/order/list', { params: params });
   return res.data;
 }
+
+export async function getAddressList(params: any) {
+  const res = await defaultHttp.get('/api/address/list', { params: params });
+  return res.data;
+}

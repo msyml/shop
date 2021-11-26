@@ -21,8 +21,14 @@ export interface Order {
   orderTime: Date;
 }
 
-
 export interface GoingType {
   icon: string;
   desc: string;
+}
+
+export interface Address {
+  id: string;
+  address: string;
+  name: string;
+  image: string;
 }

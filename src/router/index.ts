@@ -139,6 +139,7 @@ export const TabBarRoute: RouteRecordRaw = {
       component: () => import('@/views/account/editAddress.vue'),
       meta: {
         title: 'New Address',
+        customTitle: true,
       },
     },
     {
