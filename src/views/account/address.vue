@@ -3,8 +3,8 @@
     <div class="item" v-for="item in list" :key="item.id" @click="toPage(item.id)">
       <van-image :src="item.image" />
       <div class="info">
-        <p class="name">{{ item.name }}</p>
-        <p class="address">{{ item.address }}</p>
+        <p class="title">{{ item.title }}</p>
+        <p class="address">{{ item.city }}{{ item.address }}</p>
       </div>
       <SimpleIcon class="icon" icon="icon-right" />
     </div>
@@ -16,10 +16,8 @@
   import { Address } from './types';
   import { SimpleIcon } from '@/components';
   import { getAddressList } from '@/api';
-  import { useStore } from 'vuex';
-  import { onBeforeRouteLeave, useRouter } from 'vue-router';
+  import { useRouter } from 'vue-router';
 
-  const store = useStore();
   const router = useRouter();
 
   const state = reactive({
@@ -28,16 +26,6 @@
 
   onMounted(() => {
     getList();
-  });
-
-  onBeforeRouteLeave((to) => {
-    if (to.path === '/accountEditAddress') {
-      if (to.query?.id) {
-        store.dispatch('asyncChangeTitle', 'Edit Address');
-      } else {
-        store.dispatch('asyncChangeTitle', 'New Address');
-      }
-    }
   });
 
   const toPage = (id: string) => {

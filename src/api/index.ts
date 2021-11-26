@@ -34,3 +34,8 @@ export async function getAddressList(params: any) {
   const res = await defaultHttp.get('/api/address/list', { params: params });
   return res.data;
 }
+
+export async function getAddressDetail(params: any) {
+  const res = await defaultHttp.get('/api/address/detail', { params: params });
+  return res.data;
+}

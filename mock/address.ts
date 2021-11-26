@@ -8,11 +8,24 @@ const addressList = (pageSize: number) => {
     res.push({
       id: '@integer(10,99999)',
       name: '@cword(3)',
-      address: '@county(true)',
+      title: '@cword(2)',
+      city: '@county(true)',
+      address: '@cword(3)',
       image: Random.image('4*4', Random.color(), Random.color(), Random.first()),
     });
   }
   return res;
+};
+
+const addressDetail = (id: string) => {
+  return {
+    id,
+    name: '@cword(3)',
+    title: '@cword(2)',
+    city: '@county(true)',
+    address: '@cword(3)',
+    image: Random.image('4*4', Random.color(), Random.color(), Random.first()),
+  };
 };
 
 export default [
@@ -27,6 +40,17 @@ export default [
         pageSize: Number(pageSize),
         pageCount: 50,
         list,
+      });
+    },
+  },
+  {
+    url: '/api/address/detail',
+    method: 'get',
+    response: ({ query }) => {
+      const { id = 1 } = query;
+      const detail = addressDetail(id);
+      return resultSuccess({
+        ...detail,
       });
     },
   },

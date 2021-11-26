@@ -29,6 +29,8 @@ export interface GoingType {
 export interface Address {
   id: string;
   address: string;
+  title: string;
   name: string;
+  city: string;
   image: string;
 }
