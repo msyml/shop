@@ -143,8 +143,8 @@ export const TabBarRoute: RouteRecordRaw = {
       },
     },
     {
-      path: '/accountPayment',
-      component: () => import('@/views/account/payment.vue'),
+      path: '/cartPayment',
+      component: () => import('@/views/cart/payment.vue'),
       meta: {
         title: 'Payment',
       },

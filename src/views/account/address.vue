@@ -1,12 +1,12 @@
 <template>
   <div class="address">
-    <div class="item" v-for="item in list" :key="item.id" @click="toPage(item.id)">
+    <div class="item" v-for="item in list" :key="item.id" @click="changeAddress(item.id)">
       <van-image :src="item.image" />
       <div class="info">
         <p class="title">{{ item.title }}</p>
         <p class="address">{{ item.city }}{{ item.address }}</p>
       </div>
-      <SimpleIcon class="icon" icon="icon-right" />
+      <SimpleIcon class="icon" @click.stop="toPage(item.id)" icon="icon-right" />
     </div>
   </div>
 </template>
@@ -16,9 +16,10 @@
   import { Address } from './types';
   import { SimpleIcon } from '@/components';
   import { getAddressList } from '@/api';
-  import { useRouter } from 'vue-router';
+  import { useRouter, useRoute } from 'vue-router';
 
   const router = useRouter();
+  const route = useRoute();
 
   const state = reactive({
     list: [] as Address[],
@@ -35,6 +36,17 @@
         id,
       },
     });
+  };
+
+  const changeAddress = (id: string) => {
+    if (route.query.isCheck === '1') {
+      router.replace({
+        path: '/cartPayment',
+        query: {
+          id,
+        },
+      });
+    }
   };
 
   const getList = () => {

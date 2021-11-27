@@ -13,6 +13,7 @@ import {
   Notify,
   ConfigProvider,
   Step,
+  Calendar,
   Steps,
 } from 'vant';
 
@@ -30,6 +31,7 @@ const vantComps = [
   Notify,
   ConfigProvider,
   Step,
+  Calendar,
   Steps,
 ];
 

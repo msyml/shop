@@ -4,13 +4,6 @@ export interface Option {
   path: string;
 }
 
-export interface Card {
-  id: string;
-  number: number | string;
-  image: string;
-  name: string;
-  isCheck: boolean;
-}
 
 export interface Order {
   id: string;

@@ -34,7 +34,7 @@
       </van-swipe-cell>
     </div>
     <div class="btn">
-      <SimpleButton>CheckOut</SimpleButton>
+      <SimpleButton @click="toPage">CheckOut</SimpleButton>
     </div>
   </div>
 </template>
@@ -43,8 +43,10 @@
   import { onMounted, ref } from 'vue';
   import { getProductList } from '@/api';
   import { SimpleIcon, SimpleButton } from '@/components';
+  import {useRouter} from 'vue-router'
 
   const cartList = ref<Product[]>([]);
+  const router = useRouter();
 
   onMounted(() => {
     getCartList();
@@ -53,6 +55,12 @@
   const removeCart = (index: number) => {
     cartList.value.splice(index, 1);
   };
+
+  const toPage = () => {
+    router.push({
+      path: '/cartPayment'
+    })
+  }
 
   const changeCount = (type: string, index: number) => {
     if (type === 'add') {

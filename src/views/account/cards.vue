@@ -39,7 +39,6 @@
   import { onMounted, reactive, toRefs } from 'vue';
   import { SimpleEmpty, SimpleIcon } from '@/components';
   import { getCardList } from '@/api';
-  import { Card } from './types';
 
   const state = reactive({
     list: [] as Card[],

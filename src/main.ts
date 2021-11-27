@@ -4,7 +4,7 @@ import { setupStore } from '@/store';
 import router, { setupRouter } from '@/router';
 import { setupVant } from '@/plugins';
 // 引入SVG图标
-import 'https://at.alicdn.com/t/font_2930737_xrvpo2byto.js?spm=a313x.7781069.1998910419.85&file=font_2930737_xrvpo2byto.js';
+import 'https://at.alicdn.com/t/font_2930737_m8epb6adocc.js?spm=a313x.7781069.1998910419.40&file=font_2930737_m8epb6adocc.js';
 // import './assets/iconfont.js'
 
 async function bootstrap() {
