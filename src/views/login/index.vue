@@ -11,20 +11,20 @@
         <div class="simple-input">
           <input
             class="input"
-            :type="isShwoPass ? '' : 'password'"
+            :type="isShowPass ? '' : 'password'"
             v-model="form.password"
             placeholder="Password"
           />
           <SimpleIcon
             @click="changeShow"
             class="show"
-            :icon="isShwoPass ? 'icon-dont-show' : 'icon-show'"
+            :icon="isShowPass ? 'icon-dont-show' : 'icon-show'"
           ></SimpleIcon>
         </div>
         <p class="forgote">Forgote Password</p>
       </template>
       <template v-slot:btns>
-        <SimpleButton>Sign in</SimpleButton>
+        <SimpleButton @click="toHome">Sign in</SimpleButton>
       </template>
       <template v-slot:tips
         ><p class="bottom-tips"
@@ -41,16 +41,24 @@
   import SignBase from '@/layout/SignBase.vue';
   import { useRouter } from 'vue-router';
   import { LoginForm } from './types';
+  import { Notify } from 'vant';
 
   const router = useRouter();
-  const isShwoPass = ref(false);
+  const isShowPass = ref(false);
   const form = reactive<LoginForm>({
     phone: '',
     password: '',
   });
 
+  const toHome = () => {
+    if (!form.phone && !form.password) {
+      return Notify({ message: "phone or password can't be empty'", type: 'danger' });
+    }
+    router.push('/home');
+  };
+
   const changeShow = () => {
-    isShwoPass.value = !isShwoPass.value;
+    isShowPass.value = !isShowPass.value;
   };
   const toRegister = () => {
     router.push('/register');
@@ -60,8 +68,6 @@
 
 <style scoped lang="less">
   .login {
-    
-
     .tips {
       color: #6d3805;
     }

@@ -3,7 +3,7 @@
     <ProductBackgroundIcon class="back"></ProductBackgroundIcon>
     <div class="info">
       <div class="image">
-        <van-image lazy-load class="img" :src="image" />
+        <van-image round lazy-load class="img" :src="image" />
       </div>
       <div class="title">
         {{ name }}
@@ -28,7 +28,7 @@
         ></SimpleIcon>
       </div>
       <div class="button">
-        <SimpleButton>Add Cart</SimpleButton>
+        <SimpleButton @click="addCart">Add Cart</SimpleButton>
       </div>
     </div>
     <div class="related">
@@ -42,11 +42,12 @@
 </template>
 
 <script lang="ts" setup>
-  import { onMounted, reactive, ref, toRefs } from 'vue';
+  import { onBeforeUpdate, onMounted, reactive, ref, toRefs } from 'vue';
   import { getProductDetail, getProductList } from '@/api';
   import { SimpleIcon, SimpleButton, SimpleProductCard } from '@/components';
   import ProductBackgroundIcon from '@/layout/ProductBackgroundIcon.vue';
-  import { useRoute } from 'vue-router';
+  import { useRoute, onBeforeRouteUpdate } from 'vue-router';
+  import { Notify } from 'vant';
 
   const route = useRoute();
 
@@ -60,9 +61,21 @@
     price: 0,
     desc: '',
     unit: '',
+    isFavorite: false,
+  });
+
+  onBeforeRouteUpdate(() => {
+    getDetail(route.query?.id as string);
   });
 
   const { id, name, image, count, price, desc, unit, isFavorite } = toRefs(detail);
+
+  const addCart = () => {
+    Notify({
+      message: 'add cart success',
+      type: 'success',
+    });
+  };
 
   const getDetail = (id: string) => {
     const para = {
@@ -111,6 +124,8 @@
     height: calc(100vh - 108px);
     .back {
       position: absolute;
+      width: @fontDefaultSize * 12;
+      height: @fontDefaultSize * 12;
       right: 0;
       top: 0;
       z-index: 1;

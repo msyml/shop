@@ -6,7 +6,9 @@
     >
     <div class="category">
       <div class="category-item" v-for="item in categoryList" :key="item.id">
-        <van-image lazy-load class="img" :src="item.image" />
+        <div class="image">
+          <van-image height="100%" width="100%" round lazy-load class="img" :src="item.image" />
+        </div>
         <span>{{ item.name }}</span>
       </div>
     </div>
@@ -50,7 +52,8 @@
   .home {
     display: flex;
     flex-direction: column;
-
+    height: calc(100vh - 128px);
+    justify-content: space-around;
     .title {
       display: flex;
       padding: 0 @aroundMargin*1.5;
@@ -73,8 +76,9 @@
         align-items: center;
         color: #6d3805;
         margin: 0 12px;
-        img {
-          border-radius: 100%;
+        .image {
+          width: @fontDefaultSize * 5;
+          height: @fontDefaultSize * 5;
         }
       }
     }
@@ -89,118 +93,6 @@
         margin: 0 16px;
         box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
         padding: 8px;
-        .image {
-          .img {
-            border-radius: 16px;
-          }
-        }
-        .info {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          .name {
-            color: #6d3805;
-            font-weight: bold;
-          }
-          .unit {
-            color: #929292;
-          }
-          .price {
-            color: @mainColor;
-            font-weight: bold;
-          }
-          .add {
-            position: absolute;
-            right: 8px;
-            bottom: 8px;
-            background-color: #3aa14c;
-            color: #fff;
-            border-radius: 100%;
-            font-weight: bold;
-            text-align: center;
-          }
-        }
-      }
-    }
-  }
-  @media only screen and (max-width: 720px) {
-    .home {
-      .title {
-        margin: 24px 0;
-      }
-      .category {
-        .category-item {
-          .img {
-            width: @fontDefaultSize * 5;
-          }
-        }
-      }
-      .popular {
-        .popular-item {
-          .image {
-            .img {
-              width: 108px;
-              height: 100%;
-            }
-          }
-          .info {
-            .name {
-            }
-            .unit {
-              font-size: @fontDefaultSize * 0.8;
-            }
-            .price {
-            }
-            .add {
-              width: @fontDefaultSize * 1.5;
-              height: @fontDefaultSize * 1.5;
-              line-height: @fontDefaultSize * 1.5;
-            }
-          }
-        }
-      }
-    }
-  }
-  @media only screen and (min-width: 721px) {
-    .home {
-      .title {
-        margin: 8px 0;
-      }
-      .category {
-        font-size: @fontDefaultSize * 2;
-
-        .category-item {
-          img {
-            width: @fontDefaultSize * 8;
-          }
-        }
-      }
-      .popular {
-        .popular-item {
-          .image {
-            img {
-              width: @fontDefaultSize * 15;
-              height: 100%;
-            }
-          }
-          .info {
-            .name {
-              font-size: @fontDefaultSize*3;
-            }
-            .unit {
-              font-size: @fontDefaultSize * 2;
-            }
-            .price {
-              font-size: @fontDefaultSize * 3;
-            }
-            .add {
-              width: @fontDefaultSize * 4.5;
-              height: @fontDefaultSize * 4.5;
-              line-height: @fontDefaultSize * 4.5;
-              font-size: @fontDefaultSize * 3;
-            }
-          }
-        }
       }
     }
   }

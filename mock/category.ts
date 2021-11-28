@@ -7,7 +7,7 @@ const categoryList = (pageSize: number) => {
   for (let i = 0; i < pageSize; i++) {
     res.push({
       id: '@integer(10,99999)',
-      name: '@cword(1,3)',
+      name: '@cword(1,2)',
       image: Random.image('4*4', Random.color(), Random.color(), Random.first()),
     });
   }

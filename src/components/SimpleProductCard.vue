@@ -1,7 +1,7 @@
 <template>
   <div class="popular-item" @click="toDetail(product.id)">
     <div class="image">
-      <van-image lazy-load :src="product.image" />
+      <van-image round width="100%" height="100%" lazy-load :src="product.image" />
     </div>
     <div class="info">
       <div class="name">{{ product.name }}</div>
@@ -41,10 +41,8 @@
     box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.2);
     .image {
       text-align: center;
-      img {
-        border-radius: 16px;
-        width: 100%;
-      }
+      width: @fontDefaultSize * 6;
+      height: @fontDefaultSize * 6;
     }
     .info {
       display: flex;
@@ -56,6 +54,7 @@
       }
       .unit {
         color: #929292;
+        font-size: @fontDefaultSize * 0.8;
       }
       .price {
         color: @mainColor;
@@ -70,44 +69,46 @@
         border-radius: 100%;
         font-weight: bold;
         text-align: center;
+        width: @fontDefaultSize * 1.5;
+        height: @fontDefaultSize * 1.5;
+        line-height: @fontDefaultSize * 1.5;
       }
     }
   }
 
-  @media only screen and (max-width: 720px) {
-    .popular-item {
-      .info {
-        .unit {
-          font-size: @fontDefaultSize * 0.8;
-        }
-        .add {
-          width: @fontDefaultSize * 1.5;
-          height: @fontDefaultSize * 1.5;
-          line-height: @fontDefaultSize * 1.5;
-          
-        }
-      }
-    }
-  }
-  @media only screen and (min-width: 721px) {
-    .popular-item {
-      .info {
-        .name {
-          font-size: @fontDefaultSize*3;
-        }
-        .unit {
-          font-size: @fontDefaultSize * 2;
-        }
-        .price {
-          font-size: @fontDefaultSize * 3;
-        }
-        .add {
-          width: @fontDefaultSize * 4.5;
-          height: @fontDefaultSize * 4.5;
-          line-height: @fontDefaultSize * 4.5;
-          font-size: @fontDefaultSize * 3;
-        }
-      }
-    }
-  }
+  // @media only screen and (max-width: 720px) {
+  //   .popular-item {
+  //     .info {
+  //       .unit {
+  //         font-size: @fontDefaultSize * 0.8;
+  //       }
+  //       .add {
+  //         width: @fontDefaultSize * 1.5;
+  //         height: @fontDefaultSize * 1.5;
+  //         line-height: @fontDefaultSize * 1.5;
+  //       }
+  //     }
+  //   }
+  // }
+  // @media only screen and (min-width: 721px) {
+  //   .popular-item {
+  //     .info {
+  //       .name {
+  //         font-size: @fontDefaultSize*3;
+  //       }
+  //       .unit {
+  //         font-size: @fontDefaultSize * 2;
+  //       }
+  //       .price {
+  //         font-size: @fontDefaultSize * 3;
+  //       }
+  //       .add {
+  //         width: @fontDefaultSize * 4.5;
+  //         height: @fontDefaultSize * 4.5;
+  //         line-height: @fontDefaultSize * 4.5;
+  //         font-size: @fontDefaultSize * 3;
+  //       }
+  //     }
+  //   }
+  // }
 </style>
