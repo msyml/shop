@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <div class="card see">
+    <div class="card see" @click="toItems">
       <SimpleIcon class="icon see-icon" icon="icon-see"></SimpleIcon>
       <p class="desc">See Items</p>
       <SimpleIcon class="icon" icon="icon-right"></SimpleIcon>
@@ -84,18 +84,20 @@
       </div>
       <div class="item">
         <p>Tax</p>
-        <p>${{ subTotal }}</p>
+        <p>${{ (subTotal * 0.1).toFixed(2) }}</p>
       </div>
       <div class="item">
         <p>In-Store Pick Up</p>
-        <p>${{ subTotal }}</p>
+        <p>${{ storeCount.toFixed(2) }}</p>
       </div>
       <div class="item bottom">
         <p>Total</p>
-        <p>${{ count }}</p>
+        <p>${{ (subTotal * 1.1 + storeCount).toFixed(2) }}</p>
       </div>
     </div>
-    <SimpleButton class="bottom-btn">CheckOut${{ count }}</SimpleButton>
+    <SimpleButton class="bottom-btn" @click="submit"
+      >CheckOut${{ (subTotal * 1.1 + storeCount).toFixed(2) }}</SimpleButton
+    >
     <van-calendar v-model:show="show" @confirm="onConfirm" />
   </div>
 </template>
@@ -114,6 +116,7 @@
   const state = reactive({
     count: 0,
     subTotal: 0,
+    storeCount: 0,
     cardList: [] as Card[],
     pickUpCheck: false,
     address: {} as Address,
@@ -127,13 +130,43 @@
     { name: 'Kungsbacka Kungsmassan', number: '17' },
   ];
 
-  const { count, subTotal, cardList, pickUpCheck, address, activeMoment, show, checkDate } =
-    toRefs(state);
+  const {
+    count,
+    subTotal,
+    cardList,
+    pickUpCheck,
+    address,
+    activeMoment,
+    show,
+    checkDate,
+    storeCount,
+  } = toRefs(state);
 
   onMounted(() => {
+    if (!sessionStorage.cartList) {
+      router.replace('/cart');
+    }
+    calcCount();
     getCards();
     getAddress();
   });
+
+  const toItems = () => {
+    router.push('/cartItems');
+  };
+
+  const submit = () => {
+    router.push('/cartSuccess');
+  };
+
+  const calcCount = () => {
+    const list = JSON.parse(sessionStorage.cartList);
+    let subCount = 0;
+    list.map((item: any) => {
+      subCount = subCount + item.price * item.count;
+    });
+    state.subTotal = subCount;
+  };
 
   const onConfirm = (value: any) => {
     state.checkDate = dayjs(value).format('YYYY-MM-DD');

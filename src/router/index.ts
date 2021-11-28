@@ -80,13 +80,7 @@ export const TabBarRoute: RouteRecordRaw = {
         isNeedBack: true,
       },
     },
-    {
-      path: '/cart',
-      component: () => import('@/views/cart/index.vue'),
-      meta: {
-        title: 'Cart',
-      },
-    },
+
     {
       path: '/explore',
       component: () => import('@/views/explore/index.vue'),
@@ -102,6 +96,48 @@ export const TabBarRoute: RouteRecordRaw = {
         title: 'Fruits',
         isNeedBack: false,
         customTitle: true,
+      },
+    },
+    {
+      path: '/cart',
+      component: () => import('@/views/cart/index.vue'),
+      meta: {
+        title: 'Cart',
+      },
+    },
+    {
+      path: '/cartPayment',
+      component: () => import('@/views/cart/payment.vue'),
+      meta: {
+        title: 'Payment',
+      },
+    },
+    {
+      path: '/cartItems',
+      component: () => import('@/views/cart/items.vue'),
+      meta: {
+        title: 'Items',
+      },
+    },
+    {
+      path: '/cartSuccess',
+      component: () => import('@/views/cart/success.vue'),
+      meta: {
+        isNeedBack: false,
+      },
+    },
+    {
+      path: '/cartFailed',
+      component: () => import('@/views/cart/failed.vue'),
+      meta: {
+        isNeedBack: false,
+      },
+    },
+    {
+      path: '/favorite',
+      component: () => import('@/views/favorite/index.vue'),
+      meta: {
+        title: 'Favorite',
       },
     },
     {
@@ -142,13 +178,7 @@ export const TabBarRoute: RouteRecordRaw = {
         customTitle: true,
       },
     },
-    {
-      path: '/cartPayment',
-      component: () => import('@/views/cart/payment.vue'),
-      meta: {
-        title: 'Payment',
-      },
-    },
+
     {
       path: '/accountEditProfile',
       component: () => import('@/views/account/editProfile.vue'),
@@ -177,13 +207,6 @@ export const TabBarRoute: RouteRecordRaw = {
         title: 'My Cards',
         isNeedAdd: true,
         addPath: 'accountEditCards',
-      },
-    },
-    {
-      path: '/favorite',
-      component: () => import('@/views/favorite/index.vue'),
-      meta: {
-        title: 'Favorite',
       },
     },
   ],

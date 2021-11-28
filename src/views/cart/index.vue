@@ -57,6 +57,7 @@
   };
 
   const toPage = () => {
+    sessionStorage.setItem("cartList",JSON.stringify(cartList.value));
     router.push({
       path: '/cartPayment'
     })
