@@ -1,64 +1,46 @@
-# Shop
+## 简介
 
-## 分析需求页面
+[Msyml-Shop](https://github.com/msyml/shop)基于[Vue3.0](https://github.com/vuejs/vue-next)、[Vite](https://github.com/vitejs/vite)、 [Vant UI](https://vant-contrib.gitee.io/vant/v3/#/zh-CN/home)、[TypeScript](https://www.typescriptlang.org/) 的移动端商城结构，使用了最新的前端技术栈，提炼了基于个人理解的页面、组件，原型图[可参照](https://www.figma.com/file/3MRhnabfhlwA9SmAbbC9tf/Grocery-app-(Community))。
 
-- 欢迎页面
-  - 注册页面
-    - 姓名手机号页面
-    - 输入密码以及确认密码页面
-    - 手机验证码注册页面
-  - 登录页面
-- 首页
-  - 商品详情
-- 探索页
-  - 分类列表
-  - 分类下商品
-- 购物车
-  - 正常购物车列表
-  - 没有 checkout 的购物车
-  - 购物车滑动列表
-  - 支付页面
-    - 支付成功
-    - 支付失败
-- 喜欢的
-  - 空状态页
-  - 列表滑动页
-- 个人中心
-  - 订单
-    - 正在进行的空状态
-    - 历史订单
-    - 正在进行的订单列表
-  - 配置列表
-    - 编辑姓名手机号
-    - 修改密码
-  - 卡片页面
-    - 正常卡片列表
-    - 卡片列表滑动
-    - 新增卡片
-    - 卡片页面空状态
-  - 地址页面
-    - 新增地址
-    - 地址列表
-    - 编辑地址
+## 特性
 
-## 开发未解决问题
+- **最新技术栈：**使用Vue3.2+/Vite2等前端前沿技术开发
+- **TypeScript：**应用程序级JavaScript语言
+- **代码规范：**丰富的规范插件配置以及较高的代码规范
+- **路由配置：**简易的路由配置
 
-### 注册页面 svg 图片阴影问题
+## 代码仓库
 
-备用方案：直接导出 png 图片替代
+- [Github](https://github.com/msyml/shop)
 
-### SVG 图片占用空间过大
+## 项目示例图
 
-### SimpleInput 可以优化一下
+![image-20211129205415054](https://qiniu.msyml.cn/blog/20211129205415.png)![image-20211129205501205](https://qiniu.msyml.cn/blog/20211129205501.png)![image-20211129205523672](https://qiniu.msyml.cn/blog/20211129205523.png)![image-20211129205537609](https://qiniu.msyml.cn/blog/20211129205537.png)![image-20211129205554261](https://qiniu.msyml.cn/blog/20211129205554.png)![image-20211129205611460](https://qiniu.msyml.cn/blog/20211129205611.png)
 
-### 需要重新考虑下响应式
+## 安装使用
 
-### ~~SignCode 中输入数值自动跳转到下一个按钮，使用 Vue3+的方式绑定 ref~~
+- 克隆代码
 
-[解决方案](./src/views/register/signCode.vue)
+  ```shell
+  git clone https://github.com/msyml/shop
+  ```
 
-### ~~有空可以优化下选择分类的动画效果~~
+- 安装依赖
 
-### 优化分类详情瀑布流，可以分为双列
+  ```shell
+  npm i
+  ```
 
-### ~~商品详情背景图被 title 覆盖问题~~
+- 运行
+
+  ```shell
+  npm run start
+  ```
+
+- 打包
+
+  ```shell
+  npm run build
+  ```
+
+  
