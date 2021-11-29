@@ -5,7 +5,12 @@
       ><span class="sub-title">Popular deals</span><span class="all"> See All</span></div
     >
     <div class="category">
-      <div class="category-item" v-for="item in categoryList" :key="item.id">
+      <div
+        class="category-item"
+        v-for="item in categoryList"
+        :key="item.id"
+        @click="toCategoryDetail"
+      >
         <div class="image">
           <van-image height="100%" width="100%" round lazy-load class="img" :src="item.image" />
         </div>
@@ -26,13 +31,19 @@
   import { onMounted, ref } from 'vue';
   import { SimpleInput, SimpleProductCard } from '@/components';
   import { getCategoryList, getProductList } from '@/api';
+  import { useRouter } from 'vue-router';
 
+  const router = useRouter();
   defineProps({
     msg: String,
   });
 
   const categoryList = ref<Category[]>([]);
   const productList = ref<Product[]>([]);
+
+  const toCategoryDetail = () => {
+    router.push('/exploreDetail');
+  };
 
   onMounted(() => {
     Promise.all([

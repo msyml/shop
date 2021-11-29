@@ -22,7 +22,7 @@
 <style scoped lang="less">
   .fail {
     .icon {
-      height: 320px;
+      height: 180px;
       margin-bottom: @fontDefaultSize;
     }
     .desc {

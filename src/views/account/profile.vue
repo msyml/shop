@@ -14,7 +14,6 @@
           <van-switch
             v-model="notificationsCheck"
             active-color="#FF5E00"
-            size="24px"
             inactive-color="#dcdee0"
           ></van-switch>
         </div>

@@ -43,7 +43,7 @@
   import { onMounted, ref } from 'vue';
   import { getProductList } from '@/api';
   import { SimpleIcon, SimpleButton } from '@/components';
-  import {useRouter} from 'vue-router'
+  import { useRouter } from 'vue-router';
 
   const cartList = ref<Product[]>([]);
   const router = useRouter();
@@ -57,11 +57,11 @@
   };
 
   const toPage = () => {
-    sessionStorage.setItem("cartList",JSON.stringify(cartList.value));
+    sessionStorage.setItem('cartList', JSON.stringify(cartList.value));
     router.push({
-      path: '/cartPayment'
-    })
-  }
+      path: '/cartPayment',
+    });
+  };
 
   const changeCount = (type: string, index: number) => {
     if (type === 'add') {
@@ -86,6 +86,8 @@
 <style scoped lang="less">
   .cart {
     color: @tabBarUnActiveColor;
+    overflow: auto;
+    height: calc(100vh - 174px);
     .list {
       margin-top: 8px;
       .item {

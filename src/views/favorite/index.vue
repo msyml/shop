@@ -56,7 +56,7 @@
 
   const productList = () => {
     const para = {
-      pageSize: 3,
+      pageSize: 8,
     };
     getProductList(para).then((res: Result<PageResult<Product>>) => {
       state.list = res.result.list;
@@ -74,6 +74,8 @@
 
 <style scoped lang="less">
   .favorite {
+    overflow: auto;
+    height: calc(100vh - 108px);
     .desc {
       display: flex;
       flex-direction: column;

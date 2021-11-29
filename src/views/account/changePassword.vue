@@ -75,7 +75,7 @@
       }
     }
     .simple-input:nth-child(n + 1) {
-      margin: @fontDefaultSize*4 0;
+      margin: @fontDefaultSize*3 0;
     }
     .simple-input:nth-child(n + 2) {
       margin: @fontDefaultSize*1 0;

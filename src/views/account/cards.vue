@@ -12,7 +12,7 @@
       <van-swipe-cell v-for="(item, index) in list" :key="item.id">
         <div class="item">
           <div class="image">
-            <van-image lazy-load class="img" round :src="item.image" />
+            <van-image lazy-load width="100%" height="100%" class="img" round :src="item.image" />
           </div>
           <div class="info">
             <p class="name">{{ item.name }}</p>

@@ -1,7 +1,9 @@
 <template>
   <div class="address">
     <div class="item" v-for="item in list" :key="item.id" @click="changeAddress(item.id)">
-      <van-image :src="item.image" />
+      <div class="image">
+        <van-image lazy-load round width="100%" height="100%" :src="item.image" />
+      </div>
       <div class="info">
         <p class="title">{{ item.title }}</p>
         <p class="address">{{ item.city }}{{ item.address }}</p>
@@ -63,14 +65,22 @@
 
 <style scoped lang="less">
   .address {
+    height: calc(100vh - 108px);
+    overflow: auto;
     .item {
       display: flex;
       align-items: center;
       padding: 0 @fontDefaultSize;
+      height: @fontDefaultSize*5;
       color: #6d3805;
       border-bottom: 1px solid rgba(128, 79, 30, 0.1);
+      .image {
+        width: @fontDefaultSize*4;
+        height: @fontDefaultSize*4;
+      }
       .info {
         flex: 1;
+        height: @fontDefaultSize*5;
         padding-left: @fontDefaultSize * 0.5;
         .name {
           font-weight: bold;

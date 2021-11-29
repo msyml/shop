@@ -17,7 +17,7 @@
 <script lang="ts" setup>
   import { onMounted, ref } from 'vue';
   import { TabBarItem } from './types';
-  import { useRoute, useRouter } from 'vue-router';
+  import { useRoute, useRouter, onBeforeRouteUpdate } from 'vue-router';
   import SimpleIcon from './SimpleIcon.vue';
   const options: TabBarItem[] = [
     { label: 'Shop', path: '/home', icon: 'icon-home' },
@@ -32,6 +32,18 @@
 
   onMounted(() => {
     checkRoute();
+  });
+
+  onBeforeRouteUpdate((to) => {
+    try {
+      options.forEach((item: TabBarItem, index: number) => {
+        let reg = new RegExp(item.path, 'g');
+        if (reg.test(to.path)) {
+          activeIndex.value = index;
+          throw new Error('matching!');
+        }
+      });
+    } catch {}
   });
 
   const checkRoute = () => {
@@ -61,7 +73,7 @@
     position: absolute;
     width: 100vw;
     bottom: 0;
-    
+
     .item {
       z-index: 1;
       display: flex;
