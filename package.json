@@ -2,8 +2,10 @@
   "name": "shop",
   "version": "0.0.0",
   "scripts": {
-    "start": "vite --mode development --host",
-    "build": "vite build",
+    "start": "cross-env NODE_ENV=development vite --host",
+    "prod": "cross-env NODE_ENV=production vite --host",
+    "build:dev": "vite build --mode development",
+    "build:prod": "vite build --mode production",
     "serve": "vite preview"
   },
   "dependencies": {
